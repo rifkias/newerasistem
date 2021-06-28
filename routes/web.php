@@ -19,9 +19,7 @@ Route::get('/produk/{type}/{detail}','IndexController@produkDetail')->name('Prod
 Route::get('/produk/{type}','IndexController@produkType')->name('ProdukType');
 Route::get('/produk','IndexController@produk')->name('Produk');
 
-Route::get('/test',function(){
-    return view('layouts.admin');
-});
+
 Route::group(['prefix' => 'adminsipbos'], function () {
 
     Auth::routes();
