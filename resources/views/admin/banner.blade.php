@@ -213,21 +213,29 @@
 @endsection
 
 @push('css')
-<link href="{{asset('/admin/libs/datatables.net-bs4/css/dataTables.bootstrap4.css')}}" rel="stylesheet">
-<link src="{{asset('/admin/extra-libs/DataTables/responsive.dataTables.min.css')}}" rel="stylesheet">
-<link href="{{asset('/admin/libs/sweetalert2/dist/sweetalert2.min.css')}}" rel="stylesheet">
+{{-- <link href="{{asset('/admin/libs/datatables.net-bs4/css/dataTables.bootstrap4.css')}}" rel="stylesheet">
+<link src="{{asset('/admin/extra-libs/DataTables/responsive.dataTables.min.css')}}" rel="stylesheet"> --}}
 
-     <link href="{{asset('/admin/extra-libs/DataTables/datatables2.min.css')}}" rel="stylesheet">
-     <link href="{{asset('/admin/libs/datatables.net-bs4/css/dataTables.bootstrap4.css')}}" rel="stylesheet">
+<link href="{{asset('/admin/add-on/datatables.net-bs4/css/dataTables.bootstrap4.css')}}" rel="stylesheet">
+<link rel="stylesheet" type="text/css"
+    href="{{asset('/admin/add-on/datatables.net-bs4/css/responsive.dataTables.min.css')}}">
+
+<link href="{{asset('/admin/libs/sweetalert2/dist/sweetalert2.min.css')}}" rel="stylesheet">
+{{-- <link href="{{asset('/admin/extra-libs/DataTables/datatables2.min.css')}}" rel="stylesheet"> --}}
+
 
 @endpush
 
 @push('script')
      <!--This page plugins -->
+     {{-- <script src="{{asset('/admin/extra-libs/DataTables/datatables.min.js')}}"></script>
      <script src="{{asset('/admin/extra-libs/DataTables/datatables.min.js')}}"></script>
-     <script src="{{asset('/admin/extra-libs/DataTables/dataTables.responsive.min.js')}}"></script>
+     <script src="{{asset('/admin/extra-libs/DataTables/dataTables.responsive.min.js')}}"></script> --}}
+     <script src="{{asset('/admin/add-on/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+     <script src="{{asset('/admin/add-on/datatables.net-bs4/js/dataTables.responsive.min.js')}}"></script>
+
      <script src="{{asset('/admin/libs/sweetalert2/dist/sweetalert2.all.min.js')}}"></script>
-     <script src="{{asset('/admin/extra-libs/DataTables/datatables2.min.js')}}"></script>
+     {{-- <script src="{{asset('/admin/extra-libs/DataTables/datatables2.min.js')}}"></script> --}}
 
     <script>
 

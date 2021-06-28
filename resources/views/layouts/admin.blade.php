@@ -12,10 +12,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('/template/img/logo.png')}}">
     <title>SipBos - Admin</title>
     <!-- Custom CSS -->
-    <link href="{{asset('/admin/libs/chartist/dist/chartist.min.css')}}" rel="stylesheet">
-    <link href="{{asset('/admin/extra-libs/c3/c3.min.css')}}" rel="stylesheet">
-    <link href="{{asset('/admin/extra-libs/jvector/jquery-jvectormap-2.0.2.css')}}" rel="stylesheet" />
-    <!-- Custom CSS -->
     <link href="{{asset('/admin/css/style.min.css')}}" rel="stylesheet">
     @stack('css')
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -180,7 +176,7 @@
                                 <i class="mdi mdi-tune"></i>
                                 <span class="hide-menu">Website </span>
                             </a>
-                            <ul aria-expanded="false" class="collapse  first-level">
+                            <ul aria-expanded="false" class="collapse">
                                 <li class="sidebar-item">
                                     <a href="/adminsipbos/website/banner" class="sidebar-link">
                                         <i class="mdi mdi-view-quilt"></i>

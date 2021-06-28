@@ -116,7 +116,7 @@
             <div class="auth-box">
                 <div id="loginform">
                     <div class="logo">
-                        <span class="db"><img src="{{asset('/template/img/logo.png')}}" alt="logo" /></span>
+                        <span class="db"><img src="{{asset('/template/img/Logo.png')}}" alt="logo" /></span>
                         <h5 class="font-medium m-b-20">Sign In to Admin</h5>
                     </div>
                     <!-- Form -->
