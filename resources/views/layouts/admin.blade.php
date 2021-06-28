@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('/template/img/logo.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('/template/img/Logo.png')}}">
     <title>SipBos - Admin</title>
     <!-- Custom CSS -->
     <link href="{{asset('/admin/css/style.min.css')}}" rel="stylesheet">
@@ -55,9 +55,9 @@
                             <b class="logo-icon">
                                 <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                                 <!-- Dark Logo icon -->
-                                <img src="{{asset('/template/img/logo.png')}}" alt="homepage" class="dark-logo" />
+                                <img src="{{asset('/template/img/Logo.png')}}" alt="homepage" class="dark-logo" />
                                 <!-- Light Logo icon -->
-                                <img src="{{asset('/template/img/logo.png')}}" alt="homepage" class="light-logo" />
+                                <img src="{{asset('/template/img/Logo.png')}}" alt="homepage" class="light-logo" />
                             </b>
                             <!--End Logo icon -->
                             <!-- Logo text -->

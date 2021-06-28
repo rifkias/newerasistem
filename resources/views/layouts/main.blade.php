@@ -9,7 +9,7 @@
 	<title>KSP - SipBos</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" href="{{asset('/template/img/logo.png')}}">
+	<link rel="icon" href="{{asset('/template/img/Logo.png')}}">
 	<link rel="stylesheet" href="{{asset('/template/css/bootstrap.min.css')}}">
 	<link rel="stylesheet" href="{{asset('/template/css/normalize.css')}}">
 	<link rel="stylesheet" href="{{asset('/template/css/font-awesome.min.css')}}">
@@ -53,7 +53,7 @@
 		<header id="at-header" class="at-header">
 			<div class="container-fluid">
 				<div class="row">
-					<strong class="at-logo"><a href="index.html"><img src="{{asset('/template/img/logo.png')}}" alt="Berkat Artha Sentosa Logo"></a></strong>
+					<strong class="at-logo"><a href="index.html"><img src="{{asset('/template/img/Logo.png')}}" alt="Berkat Artha Sentosa Logo"></a></strong>
 					<div class="at-navigationarea">
 						<nav id="at-nav" class="at-nav">
 							<div class="navbar-header">
@@ -175,7 +175,7 @@
 						<div class="at-threecolumns">
 							<div class="at-fcolumn">
 								<div class="at-widget at-widgettext">
-									<strong class="at-logo"><a href="javascript:void(0);"><img src="{{asset('/template/img/logof.png')}}" alt="image description"></a></strong>
+									<strong class="at-logo"><a href="javascript:void(0);"><img src="{{asset('/template/img/Logof.png')}}" alt="image description"></a></strong>
 									<div class="at-description">
 										<p>Koperasi Berkat Artha Sentosa Diberkati untuk memberkati. </p>
 									</div>

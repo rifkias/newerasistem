@@ -83,7 +83,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('/template/img/logo.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('/template/img/Logo.png')}}">
     <title>Nice admin Template - The Ultimate Multipurpose admin template</title>
     <!-- Custom CSS -->
     <link href="{{asset('admin/css/style.min.css')}}" rel="stylesheet">
