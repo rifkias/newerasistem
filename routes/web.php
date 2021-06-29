@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','IndexController@index')->name('MainPage');
 Route::get('/about-us','IndexController@about')->name('AboutUs');
 Route::get('/produk/{type}','IndexController@produkType')->name('ProdukType');
-Route::get('/produk','IndexController@produk')->name('Produk');
+Route::get('/produk','IndexController@produk')->name('ProdukView');
 Route::get('/contact-us','IndexController@contactUs')->name('ContactUs');
 
 
