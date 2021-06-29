@@ -1,10 +1,10 @@
 /*--------------------------------------
-		CUSTOM FUNCTION WRITE HERE		
+		CUSTOM FUNCTION WRITE HERE
 --------------------------------------*/
 "use strict";
 jQuery(document).on('ready', function() {
 	/*--------------------------------------
-			MOBILE MENU						
+			MOBILE MENU
 	--------------------------------------*/
 	function collapseMenu(){
 		jQuery('.at-navigation ul li.menu-item-has-children, .at-navigation ul li.menu-item-has-mega-menu').prepend('<span class="at-dropdowarrow"><i class="fa fa-angle-down"></i></span>');
@@ -15,7 +15,7 @@ jQuery(document).on('ready', function() {
 	}
 	collapseMenu();
 	/*--------------------------------------
-			MEGA MENU						
+			MEGA MENU
 	--------------------------------------*/
 	jQuery(function ($) {
 		function hoverIn() {
@@ -43,7 +43,7 @@ jQuery(document).on('ready', function() {
 		jQuery('.menu-item-has-mega-menu').hover(hoverIn, hoverOut);
 	});
 	/*--------------------------------------
-			THEME ACCORDION 				
+			THEME ACCORDION
 	--------------------------------------*/
 	if(jQuery('.at-panelheading').length > 0){
 		var _tg_panelheading = jQuery('.at-panelheading');
@@ -280,7 +280,7 @@ jQuery(document).on('ready', function() {
 		});
 	}
 	/*--------------------------------------
-			COUNTER							
+			COUNTER
 	--------------------------------------*/
 	if(jQuery('#at-counters').length > 0){
 		var _tg_counters = jQuery('#at-counters');
@@ -325,16 +325,16 @@ jQuery(document).on('ready', function() {
 		var _tg_locationmap = jQuery('#at-locationmap');
 		_tg_locationmap.gmap3({
 			marker: {
-				address: 'New York, USA',
+				address: '4, Jl. Hayam Wuruk No.108, RT.4/RW.9, Maphar, Kec. Taman Sari, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11160',
 				options: {
 					title: 'Robert Frost Elementary School',
-					icon: "images/pin.png",
+					icon: "/template/images/pin.png",
 					animation: google.maps.Animation.BOUNCE,
 				}
 			},
 			map: {
 				options: {
-					zoom: 12,
+					zoom: 16,
 					styles: gmapStyles,
 					scaleControl: true,
 					scrollwheel: false,
@@ -348,7 +348,7 @@ jQuery(document).on('ready', function() {
 		});
 	}
 	/*--------------------------------------
-			PRETTY PHOTO GALLERY			
+			PRETTY PHOTO GALLERY
 	--------------------------------------*/
 	if(jQuery('#at-gallery').length > 0){
 		jQuery('a[data-rel]').each(function () {
@@ -363,7 +363,7 @@ jQuery(document).on('ready', function() {
 		});
 	}
 	/*--------------------------------------
-			MASONRY GALLERY					
+			MASONRY GALLERY
 	--------------------------------------*/
 	jQuery('#at-gallery').isotope({
 		itemSelector: '.at-griditem',
@@ -373,7 +373,7 @@ jQuery(document).on('ready', function() {
 		}
 	});
 	/*---------------------------------------
-			SKILLS PROGRESS BAR				
+			SKILLS PROGRESS BAR
 	---------------------------------------*/
 	jQuery('#at-ourskill').appear(function () {
 		jQuery('.at-skillholder').each(function () {
@@ -383,7 +383,7 @@ jQuery(document).on('ready', function() {
 		});
 	});
 	/*---------------------------------------
-			LINE CHART						
+			LINE CHART
 	---------------------------------------*/
 	if (jQuery('#at-linechart').length > 0) {
 		var chartId = document.getElementById("at-linechart");
@@ -429,7 +429,7 @@ jQuery(document).on('ready', function() {
 		});
 	}
 	/*---------------------------------------
-			DOUGHNUT CHART  				
+			DOUGHNUT CHART
 	---------------------------------------*/
 	if (jQuery('#at-doughnutchartone').length > 0) {
 		var doughnutchartone = document.getElementById("at-doughnutchartone").getContext('2d');
@@ -457,7 +457,7 @@ jQuery(document).on('ready', function() {
 		});
 	}
 	/*---------------------------------------
-			DOUGHNUT CHART					
+			DOUGHNUT CHART
 	---------------------------------------*/
 	if (jQuery('#at-doughnutchartwo').length > 0) {
 		var doughnutcharttwo = document.getElementById("at-doughnutchartwo").getContext('2d');

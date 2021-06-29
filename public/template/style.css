@@ -1,6 +1,6 @@
 	/*
- @Author: Company Name
- @URL: http://companyname.com
+ @Author: Rifki Alfariz Shidiq
+ @URL: http://sipbos.rifkialfarizshidiq.my.id
  This file contains the styling for the actual theme, this
  is the file you need to edit to change the look of the
  theme.
@@ -3109,7 +3109,7 @@ li.at-rss a { background:#ff6600; }
 	width: 100%;
 	height: 100%;
 	content: '';
-	background: url('images/icons/logo3.png') no-repeat 95% center;
+	/* background: url('img/Logofbesar.png') no-repeat 95% center; */
 	position: absolute;
 }
 .at-contactusvthree .at-sectiontitleborder:before{background: #fff;}

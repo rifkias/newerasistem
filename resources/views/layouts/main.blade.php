@@ -109,7 +109,7 @@
 											</li>
 										</ul> --}}
 									</li>
-									<li class="@if(@$page == 'kontak-kami') current-menu-item @endif">
+									<li class="@if(@$page == 'Contact') current-menu-item @endif">
 										<a href="/contact-us">Contact us</a>
 									</li>
                                     <li class="menu-item-has-children @if(@$page == 'other') current-menu-item @endif">
@@ -240,7 +240,7 @@
 			Wrapper End
 	*************************************-->
 	<script src="{{asset('/template/js/vendor/jquery-library.js')}}"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcvAXp35fi4q7HXm7vcG9JMtzQbMzjRe8"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeOh_Qw6A5V_xZ9LIrU3ipWoTL827SwUg&v=3.exp"></script>
 	<script src="{{asset('/template/js/vendor/jquery-migrate.js')}}"></script>
 	<script src="{{asset('/template/js/vendor/bootstrap.min.js')}}"></script>
     <script src="{{asset('/template/js/jquery.sticky-kit.js')}}"></script>
