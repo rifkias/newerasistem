@@ -37,10 +37,10 @@
 
 								<section class="at-servicedetailsection">
 									<div class="at-sectiontitleborder">
-										<h2>Simpanan SipBos</h2>
+										<h2>Simpanan Berjangka</h2>
 									</div>
 									<div class="at-description">
-										<p>Simpanan Anggota Koperasi dalam mata uang rupiah yang dikelola dengan prinsip simpanan yang penarikannya dapat dilakukan setiap saat berdasarkan syarat-syarat yang disepakati.</p>
+										<p>Msimpanan berjangka adalah simpanan dari pihak ketiga pada KSP Berkat Artha Sentosa yang penarikannya hanya dapat dilakukan dalam jangka waktu tertentu menurut perjanjian antara pihak ketiga dan KSP Berkat Artha Sentosa. simpanan berjangka ini diterbitkan dengan jenis waktu yang berjangka sesuai dengan periode tertentu. Jangka waktunya bervariasi mulai dari 6,12, sampai dengan 18 bulan. simpanan berjangka diterbitkan atas nama baik perorangan maupun lembaga, artinya di dalam bilyet simpanan berjangka tercantum nama perorangan atau lembaga si pemilik simpanan berjangka.</p>
 										{{-- <ul class="at-liststyle at-liststylearrowright">
 											<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
 											<li>Phasellus non felis malesuada, faucibus dui eget, sodales nibh.</li>
@@ -52,41 +52,43 @@
 								</section>
 								<section class="at-servicedetailsection">
 									<div class="row">
-										<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-left">
+										<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 pull-left">
                                             <h3>Kelebihan Kami</h3>
                                             <ul class="at-liststyle at-liststylearrowright">
-                                                <li>Bisa Setor dan tarik Kapan saja .</li>
-                                                <li>Pendaftaran cepat & mudah.</li>
+                                                <li>Angsuran Tetap.</li>
+                                                <li>Proses Mudah & Cepat.</li>
+                                                <li>Bersifat Flexible.</li>
+                                                <li>Bunga Bersaing.</li>
+                                                <li>Dapat diperpanjang otomatis ( Automatic Roll over ).</li>
                                             </ul>
 										</div>
-                                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-left">
+                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 pull-left">
                                             <h3>Syarat & Ketentuan</h3>
                                             <ul class="at-liststyle at-liststylearrowright">
-                                                <li>Setoran awal minimum Rp.20.000,-</li>
-                                                <li>Setoran berikutnya minimum Rp. 20.000,-</li>
-                                                <li>Saldo minimum Rp. 20.000,-</li>
-                                                <li>Mengisi formulir aplikasi pembukaan Rekening.</li>
-                                                <li>Menunjukan kartu Identitas asli (KTP/SIM/Paspor) dan menyerahkan fotocopy bukti identitas yang dimaksud.</li>
-                                                <li>Penarikan tunai di teller dengan penarikan diatas Rp. 1.000.000,- wajib konfirmasi satu hari sebelumnya (H-1).</li>
+                                                <li>FotoCopi KTP.</li>
+                                                <li>FotoCopy NPWP.</li>
+                                                <li>FotoCopy Lembar depan buku tabungan.</li>
+                                                <li>Pilihan Jangka Waktu 3,6,12 dan 24 Bulan.</li>
                                             </ul>
 										</div>
 									</div>
 								</section>
-								{{-- <section class="at-servicedetailsection">
+								<section class="at-servicedetailsection">
 									<h3>Kategori</h3>
 									<div class="at-description">
 										<p>Kami memiliki beberapa kategori untuk produk ini.</p>
 									</div>
 									<div class="at-servicetabs">
 										<ul class="at-servicetabsnav" role="tablist">
-											<li role="presentation"><a href="#one" aria-controls="one" role="tab" data-toggle="tab">Client Prospecting</a></li>
-											<li role="presentation" class="active"><a href="#two" aria-controls="two" role="tab" data-toggle="tab">Growth</a></li>
-											<li role="presentation"><a href="#three" aria-controls="three" role="tab" data-toggle="tab">Risks of Investment</a></li>
+											<li role="presentation" class="active"><a href="#one" aria-controls="one" role="tab" data-toggle="tab">OKBOS</a></li>
+											<li role="presentation"><a href="#two" aria-controls="two" role="tab" data-toggle="tab">SIPBOS</a></li>
+											<li role="presentation"><a href="#three" aria-controls="three" role="tab" data-toggle="tab">HOKIBOS</a></li>
+											<li role="presentation"><a href="#four" aria-controls="four" role="tab" data-toggle="tab">MANTAPBOS</a></li>
 										</ul>
 										<div class="tab-content at-servicetabcontent">
-											<div role="tabpanel" class="tab-pane" id="one">
+											<div role="tabpanel" class="tab-pane active" id="one">
 												<div class="at-textcontent">
-													<h3>Bronze</h3>
+													<h3>Simpanan Berjangka OKBOS</h3>
 													<div class="at-description">
 														<p>We have over 15 years of experience Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean Lorem ipsm dolor sit the power of consectetur adi pisi cing elit, sed do eiusmod tempor xercitationemut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 													</div>
@@ -100,9 +102,9 @@
 													</ul>
 												</div>
 											</div>
-											<div role="tabpanel" class="tab-pane active" id="two">
+											<div role="tabpanel" class="tab-pane" id="two">
 												<div class="at-textcontent">
-													<h3>Growth</h3>
+													<h3>Simpanan Berjangka SIPBOS</h3>
 													<div class="at-description">
 														<p>We have over 15 years of experience Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean Lorem ipsm dolor sit the power of consectetur adi pisi cing elit, sed do eiusmod tempor xercitationemut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 													</div>
@@ -118,7 +120,23 @@
 											</div>
 											<div role="tabpanel" class="tab-pane" id="three">
 												<div class="at-textcontent">
-													<h3>Risks of Investment</h3>
+													<h3>Simpanan Berjangka HOKIBOS</h3>
+													<div class="at-description">
+														<p>We have over 15 years of experience Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean Lorem ipsm dolor sit the power of consectetur adi pisi cing elit, sed do eiusmod tempor xercitationemut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+													</div>
+													<ul class="at-liststyle at-liststylearrowright">
+														<li>There are many variations of passages</li>
+														<li>handful of model sentence structures</li>
+														<li>Company and Industry Research</li>
+														<li>Plombett – Industry Research</li>
+														<li>Plombett – Industry Research</li>
+														<li>market analysis report “slices”</li>
+													</ul>
+												</div>
+											</div>
+                                            <div role="tabpanel" class="tab-pane" id="four">
+												<div class="at-textcontent">
+													<h3>Simpanan Berjangka MANTAPBOS</h3>
 													<div class="at-description">
 														<p>We have over 15 years of experience Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean Lorem ipsm dolor sit the power of consectetur adi pisi cing elit, sed do eiusmod tempor xercitationemut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 													</div>
@@ -134,7 +152,7 @@
 											</div>
 										</div>
 									</div>
-								</section> --}}
+								</section>
 							</div>
 							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-top:20px;text-align:center">
                                 <button class="btn btn-lg btn-primary"><i class="fa fa-download" aria-hidden="true"></i> Unduh Brosur</button>

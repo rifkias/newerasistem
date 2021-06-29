@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','IndexController@index')->name('MainPage');
 Route::get('/about-us','IndexController@about')->name('AboutUs');
-Route::get('/produk/{type}/{detail}','IndexController@produkDetail')->name('ProdukDetail');
 Route::get('/produk/{type}','IndexController@produkType')->name('ProdukType');
 Route::get('/produk','IndexController@produk')->name('Produk');
 
@@ -30,5 +29,12 @@ Route::group(['prefix' => 'adminsipbos'], function () {
     Route::post('website/banner/add', 'BannerController@store')->name('bannerAdd');
     Route::post('website/banner/delete', 'BannerController@destroy')->name('bannerDelete');
     Route::post('website/banner/active', 'BannerController@active')->name('bannerActive');
+
+    Route::get('website/produk', 'ProdukController@index')->name('Produk');
+    Route::get('website/produk/detail/{id}', 'ProdukController@show')->name('ProdukDetail');
+    Route::post('website/produk/edit', 'ProdukController@edit')->name('ProdukEdit');
+    Route::post('website/produk/add', 'ProdukController@store')->name('ProdukAdd');
+    Route::post('website/produk/delete', 'ProdukController@destroy')->name('ProdukDelete');
+    Route::post('website/produk/active', 'ProdukController@active')->name('ProdukActive');
 
 });

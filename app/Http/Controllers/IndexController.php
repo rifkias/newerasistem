@@ -28,9 +28,9 @@ class IndexController extends Controller
         if($type == 'simpanan-sipbos'){
             return view('website.produk.simpanan-sipbos')->with($this->data);
         }elseif($type == 'simpanan-berjangka'){
-            return view('website.produk.simpanan-sipbos')->with($this->data);
+            return view('website.produk.simpanan-berjangka')->with($this->data);
         }elseif($type == 'pinjaman'){
-            return view('website.produk.simpanan-sipbos')->with($this->data);
+            return view('website.produk.pinjaman')->with($this->data);
         }elseif($type == 'tabungan'){
             return view('website.produk.simpanan-sipbos')->with($this->data);
         }else{

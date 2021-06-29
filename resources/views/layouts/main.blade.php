@@ -76,7 +76,7 @@
 									<li class="menu-item-has-children @if(@$page == 'produk') current-menu-item @endif">
 										<a href="/produk">Produk Kami</a>
 										<ul class="sub-menu">
-                                            <li><a href="/produk/tabungan">Simpanan SipBos</a></li>
+                                            <li><a href="/produk/simpanan-sipbos">Simpanan SipBos</a></li>
                                             <li>
 												<a href="/produk/simpanan-berjangka">Simpanan Berjangka</a>
 												{{-- <ul class="sub-menu">

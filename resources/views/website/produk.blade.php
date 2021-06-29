@@ -38,7 +38,7 @@
 									<div class="at-service">
 										<figure class="at-serviceimg">
 											<figcaption>
-												<h2><a href="/produk/tabungan">Simpanan SipBos</a></h2>
+												<h2><a href="/produk/simpanan-sipbos">Simpanan SipBos</a></h2>
 												<div class="at-description">
 													<p>Simpanan yang sifatnya fleksibel yang bisa di setor dan ditarik dimana saja kapan saja selama jam operasional koperasi berlangsung, untuk nominal tertentu penarikan bisa dilakukan tanpa konfirmasi terlebih dahulu.</p>
 												</div>
