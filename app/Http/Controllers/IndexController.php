@@ -42,4 +42,9 @@ class IndexController extends Controller
         $this->data['page'] = 'produk';
         return view('website.produk')->with($this->data);
     }
+    public function contactUs()
+    {
+        $this->data['page'] = 'Contact';
+        return view('website.contact-us')->with($this->data);
+    }
 }
