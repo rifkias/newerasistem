@@ -40,7 +40,7 @@
 										<h2>Simpanan Berjangka</h2>
 									</div>
 									<div class="at-description">
-										<p>Msimpanan berjangka adalah simpanan dari pihak ketiga pada KSP Berkat Artha Sentosa yang penarikannya hanya dapat dilakukan dalam jangka waktu tertentu menurut perjanjian antara pihak ketiga dan KSP Berkat Artha Sentosa. simpanan berjangka ini diterbitkan dengan jenis waktu yang berjangka sesuai dengan periode tertentu. Jangka waktunya bervariasi mulai dari 6,12, sampai dengan 18 bulan. simpanan berjangka diterbitkan atas nama baik perorangan maupun lembaga, artinya di dalam bilyet simpanan berjangka tercantum nama perorangan atau lembaga si pemilik simpanan berjangka.</p>
+										<p>Msimpanan berjangka adalah simpanan dari pihak ketiga pada KSP Berkat Artha Sentosa yang penarikannya hanya dapat dilakukan dalam jangka waktu tertentu menurut perjanjian antara pihak ketiga dan KSP Berkat Artha Sentosa. simpanan berjangka ini diterbitkan dengan jenis waktu yang berjangka sesuai dengan periode tertentu. Jangka waktunya bervariasi mulai dari 1,3,6 dan 12 bulan. simpanan berjangka diterbitkan atas nama baik perorangan maupun lembaga, artinya di dalam bilyet simpanan berjangka tercantum nama perorangan atau lembaga si pemilik simpanan berjangka.</p>
 										{{-- <ul class="at-liststyle at-liststylearrowright">
 											<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
 											<li>Phasellus non felis malesuada, faucibus dui eget, sodales nibh.</li>
@@ -55,7 +55,6 @@
 										<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 pull-left">
                                             <h3>Kelebihan Kami</h3>
                                             <ul class="at-liststyle at-liststylearrowright">
-                                                <li>Angsuran Tetap.</li>
                                                 <li>Proses Mudah & Cepat.</li>
                                                 <li>Bersifat Flexible.</li>
                                                 <li>Bunga Bersaing.</li>
@@ -68,7 +67,7 @@
                                                 <li>FotoCopi KTP.</li>
                                                 <li>FotoCopy NPWP.</li>
                                                 <li>FotoCopy Lembar depan buku tabungan.</li>
-                                                <li>Pilihan Jangka Waktu 3,6,12 dan 24 Bulan.</li>
+                                                <li>Pilihan Jangka Waktu 1,3,6 dan 12 Bulan.</li>
                                             </ul>
 										</div>
 									</div>
@@ -89,64 +88,44 @@
 											<div role="tabpanel" class="tab-pane active" id="one">
 												<div class="at-textcontent">
 													<h3>Simpanan Berjangka OKBOS</h3>
-													<div class="at-description">
-														<p>We have over 15 years of experience Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean Lorem ipsm dolor sit the power of consectetur adi pisi cing elit, sed do eiusmod tempor xercitationemut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-													</div>
 													<ul class="at-liststyle at-liststylearrowright">
-														<li>There are many variations of passages</li>
-														<li>handful of model sentence structures</li>
-														<li>Company and Industry Research</li>
-														<li>Plombett – Industry Research</li>
-														<li>Plombett – Industry Research</li>
-														<li>market analysis report “slices”</li>
+														<li>Jangka Waktu 1 Bulan</li>
+														<li>Bunga 8%</li>
+														<li>Setoran Minimal Rp. 5.000.000</li>
+														<li>Khusus Untuk Anggota</li>
 													</ul>
 												</div>
 											</div>
 											<div role="tabpanel" class="tab-pane" id="two">
 												<div class="at-textcontent">
 													<h3>Simpanan Berjangka SIPBOS</h3>
-													<div class="at-description">
-														<p>We have over 15 years of experience Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean Lorem ipsm dolor sit the power of consectetur adi pisi cing elit, sed do eiusmod tempor xercitationemut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-													</div>
 													<ul class="at-liststyle at-liststylearrowright">
-														<li>There are many variations of passages</li>
-														<li>handful of model sentence structures</li>
-														<li>Company and Industry Research</li>
-														<li>Plombett – Industry Research</li>
-														<li>Plombett – Industry Research</li>
-														<li>market analysis report “slices”</li>
+														<li>Jangka Waktu 3 Bulan</li>
+														<li>Bunga 9%</li>
+														<li>Setoran Minimal Rp. 5.000.000</li>
+														<li>Khusus Untuk Anggota</li>
 													</ul>
 												</div>
 											</div>
 											<div role="tabpanel" class="tab-pane" id="three">
 												<div class="at-textcontent">
 													<h3>Simpanan Berjangka HOKIBOS</h3>
-													<div class="at-description">
-														<p>We have over 15 years of experience Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean Lorem ipsm dolor sit the power of consectetur adi pisi cing elit, sed do eiusmod tempor xercitationemut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-													</div>
 													<ul class="at-liststyle at-liststylearrowright">
-														<li>There are many variations of passages</li>
-														<li>handful of model sentence structures</li>
-														<li>Company and Industry Research</li>
-														<li>Plombett – Industry Research</li>
-														<li>Plombett – Industry Research</li>
-														<li>market analysis report “slices”</li>
+														<li>Jangka Waktu 6 Bulan</li>
+														<li>Bunga 9.5%</li>
+														<li>Setoran Minimal Rp. 5.000.000</li>
+														<li>Khusus Untuk Anggota</li>
 													</ul>
 												</div>
 											</div>
                                             <div role="tabpanel" class="tab-pane" id="four">
 												<div class="at-textcontent">
 													<h3>Simpanan Berjangka MANTAPBOS</h3>
-													<div class="at-description">
-														<p>We have over 15 years of experience Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean Lorem ipsm dolor sit the power of consectetur adi pisi cing elit, sed do eiusmod tempor xercitationemut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-													</div>
 													<ul class="at-liststyle at-liststylearrowright">
-														<li>There are many variations of passages</li>
-														<li>handful of model sentence structures</li>
-														<li>Company and Industry Research</li>
-														<li>Plombett – Industry Research</li>
-														<li>Plombett – Industry Research</li>
-														<li>market analysis report “slices”</li>
+														<li>Jangka Waktu 12 Bulan</li>
+														<li>Bunga 10%</li>
+														<li>Setoran Minimal Rp. 5.000.000</li>
+														<li>Khusus Untuk Anggota</li>
 													</ul>
 												</div>
 											</div>

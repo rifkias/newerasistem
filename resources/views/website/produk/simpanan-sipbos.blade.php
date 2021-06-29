@@ -62,9 +62,8 @@
                                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-left">
                                             <h3>Syarat & Ketentuan</h3>
                                             <ul class="at-liststyle at-liststylearrowright">
-                                                <li>Setoran awal minimum Rp.20.000,-</li>
-                                                <li>Setoran berikutnya minimum Rp. 20.000,-</li>
-                                                <li>Saldo minimum Rp. 20.000,-</li>
+                                                <li>Setoran awal minimum Rp.25.000,-</li>
+                                                <li>Saldo minimum Rp. 25.000,-</li>
                                                 <li>Mengisi formulir aplikasi pembukaan Rekening.</li>
                                                 <li>Menunjukan kartu Identitas asli (KTP/SIM/Paspor) dan menyerahkan fotocopy bukti identitas yang dimaksud.</li>
                                                 <li>Penarikan tunai di teller dengan penarikan diatas Rp. 1.000.000,- wajib konfirmasi satu hari sebelumnya (H-1).</li>
