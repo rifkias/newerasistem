@@ -23,12 +23,12 @@
                         <tbody>
                             @foreach ($banner as $index=>$item)
                             <tr>
-                                <td>{{$index + 1}}</td>
+                                <td></td>
                                 <td>{{$item->banner_name}}</td>
                                 <td>{{$item->banner_desc}}</td>
                                 <td>{{$item->read_more_link}}</td>
-                                <td> {{$item->contact_us}}</td>
-                                <td>{{$item->active}}</td>
+                                <td> <div class="btn @if($item->contact_us == 'true') btn-success @else btn-danger @endif "><i class="fas fa-lg @if($item->contact_us == 'true') fa-check @else fa-times @endif"></i></div></td>
+                                <td><div class="btn @if($item->active == 'true') btn-success @else btn-danger @endif "><i class="fas fa-lg @if($item->active == 'true') fa-check @else fa-times @endif"></i></div></td>
                                 <td>
                                 <div class="btn-group" role="group" aria-label="Basic example">
                                     <button class="btn btn-primary" onclick="ShowBanner('{{$item->id}}')"><i class="fas fa-info"></i></button>
@@ -237,160 +237,6 @@
      <script src="{{asset('/admin/libs/sweetalert2/dist/sweetalert2.all.min.js')}}"></script>
      {{-- <script src="{{asset('/admin/extra-libs/DataTables/datatables2.min.js')}}"></script> --}}
 
-    <script>
-
-        $(document).ready( function () {
-            $('#MyTable').DataTable({
-            responsive: true,
-            "dom": 'l<"toolbar">frtip',
-            columns: [
-                {target:0, responsivePriority:0},
-                {target:1, responsivePriority:1},
-                {target:2, width:'40%',responsivePriority:6},
-                {target:3, responsivePriority:5},
-                {target:4, responsivePriority:4},
-                {target:5, responsivePriority:3},
-                {target:6, responsivePriority:2},
-            ],
-            });
-        } );
-
-
-        function AddBanner() {
-            console.log('success');
-            $('#MyModal').modal({show:true});
-        }
-
-        $(document).ready(function() {
-            $('#readmoreLink').show();
-        })
-        function readMoreShow() {
-            var show = 1;
-            if(this.show == 1){
-                this.show = 0;
-                $('#readmoreLink').show();
-            }else{
-                this.show = 1;
-                $('#readmoreLink').hide();
-                $('#readmoreLink').val("");
-            }
-        }
-
-        function readMoreShow2() {
-            var b = $('#readmoreLinkEdit').prop('checked');
-            if(b == true){
-                $('#readmoreLinkE').show();
-                $('#readmoreLinkE').val("");
-            }else{
-                $('#readmoreLinkE').hide();
-                $('#readmoreLinkE').val("");
-            }
-            // console.log(this.show);
-
-        }
-        function ShowBanner(id) {
-            // $.get('/adminsipbos/website/banner/detail/'+id)
-            $.ajax({
-                url : '/adminsipbos/website/banner/detail/'+id,
-                type : 'GET',
-                cache: false,
-                success:function(data) {
-                    DetailBanner(data,'detail');
-                }
-            });
-        }
-        function ShowBannerEdit(id) {
-            $.ajax({
-                url : '/adminsipbos/website/banner/detail/'+id,
-                type : 'GET',
-                cache: false,
-                success:function(data) {
-                    DetailBanner(data,'edit');
-                }
-            });
-        }
-
-        function DetailBanner(data,type) {
-            if(type == 'detail'){
-                $('#ModalTitle').text('Detail Banner');
-                $('#NameEdit').val(data.banner_name).attr('readonly',true);
-                $('#descEdit').val(data.banner_desc).attr('readonly',true);
-                    if(data.read_more_link == null){
-                        $('#readmoreLinkEdit').attr({checked:false, disabled:true});
-                        $('#readmoreLinkE').hide();
-                    }else{
-                        $('#readmoreLinkEdit').attr({checked:true, disabled:true});
-                        $('#readmoreLinkE').show();
-                        $('#readmoreLinkE').val(data.read_more_link).attr({disabled:true});
-                    }
-                    if(data.contact_us == null){
-                        $('#contactUsE').attr({checked:false, disabled:true});
-                    }else{
-                        $('#contactUsE').attr({checked:true, disabled:true});
-                    }
-                    $('#imgE').attr('src',"{{asset('/img/banner')}}"+'/'+data.banner_img);
-                $('#imgEditRow').hide();
-                $('#MyBanner2Footer').hide();
-            }else{
-                $('#ModalTitle').text('Edit Banner');
-                $('#saveForm').text('Update Change');
-                $('#NameEdit').val(data.banner_name).attr('readonly',false);
-                $('#IdBanner').val(data.id)
-                $('#descEdit').val(data.banner_desc).attr('readonly',false);
-                $('#MyBanner2Footer').show();
-                if(data.read_more_link == null){
-                    $('#readmoreLinkEdit').attr({checked:false,disabled:false});
-                    $('#readmoreLinkE').show();
-                    $('#readmoreLinkE').hide();
-                }else{
-                    $('#readmoreLinkEdit').attr({checked:true,disabled:false});
-                    $('#readmoreLinkE').show();
-                    $('#readmoreLinkE').val(data.read_more_link).attr({disabled:false});;
-                }
-                if(data.contact_us == null){
-                    $('#contactUsE').attr({checked:false,disabled:false});
-                }else{
-                    $('#contactUsE').attr({checked:true,disabled:false});
-                }
-                $('#imgE').attr('src',"{{asset('/img/banner')}}"+'/'+data.banner_img);
-                $('#FormAction').attr('action','/adminsipbos/website/banner/edit');
-            }
-            console.log(data,type);
-            $('#MyModal2').modal('show')
-        }
-        function ActiveBanner(id) {
-            $.ajax({
-                    url : '/adminsipbos/website/banner/active',
-                    type : 'POST',
-                    data : {"_token":"{{csrf_token()}}",'id':id},
-                    cache: false,
-                    success:function(data) {
-                        location.reload();
-                    }
-                });
-        }
-        function BannerDelete(params) {
-            swal({
-                title: "Kamu yakin ?",
-                text: "Data Tidak akan bisa dikembalikan jika sudah dihapus!",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Iya, Lanjut !",
-                cancelButtonText: "Tidak, Kembali !",
-            }).then((Deleted) => {
-                $.ajax({
-                    url : '/adminsipbos/website/banner/delete',
-                    type : 'POST',
-                    data : {"_token":"{{csrf_token()}}",'id':params},
-                    cache: false,
-                    success:function(data) {
-                        location.reload();
-                    }
-                });
-            });
-        }
-
-     </script>
+    <script src="{{asset('page/banner.js')}}"></script>
      {{-- <script src="{{asset('/admin/js/pages/datatable/datatable-basic.init.js')}}"></script> --}}
 @endpush

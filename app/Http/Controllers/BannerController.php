@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Banner;
 use Illuminate\Http\Request;
 
-use Session;
+use Session,File;
 class BannerController extends Controller
 {
     /**
@@ -184,6 +184,8 @@ class BannerController extends Controller
      */
     public function destroy(Banner $banner,Request $request)
     {
+        $banner = Banner::where('id',$request->id)->pluck('banner_img');
+        // dd($banner);
         Banner::where('id',$request->id)->delete();
         return Session::flash('success','Data Berhasil Dihapus');
     }
