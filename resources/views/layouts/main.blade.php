@@ -115,12 +115,12 @@
                                     <li class="menu-item-has-children @if(@$page == 'other') current-menu-item @endif">
 										<a href="javascript:void(0);">Lainnya</a>
 										<ul class="sub-menu">
-											<li><a href="faq.html">faq</a></li>
-											<li><a href="gallery.html">News</a></li>
-											<li><a href="maintenance.html">Blog</a></li>
+											<li><a href="/faq">faq</a></li>
+											{{-- <li><a href="gallery.html">News</a></li> --}}
+											{{-- <li><a href="maintenance.html">Blog</a></li> --}}
 											{{-- <li><a href="ourprocess.html">Company Profile</a></li> --}}
-											<li><a href="ourprocess.html">Brosur Kami</a></li>
-											<li><a href="ourprocess.html">Galeri</a></li>
+											{{-- <li><a href="ourprocess.html">Brosur Kami</a></li> --}}
+											{{-- <li><a href="ourprocess.html">Galeri</a></li> --}}
 											{{-- <li><a href="pricingtable.html">pricing table</a></li>
 											<li class="menu-item-has-children">
 												<a href="javascript:void(0);">services</a>
@@ -175,7 +175,7 @@
 						<div class="at-threecolumns">
 							<div class="at-fcolumn">
 								<div class="at-widget at-widgettext">
-									<strong class="at-logo"><a href="javascript:void(0);"><img src="{{asset('/template/img/Logof.png')}}" alt="image description"></a></strong>
+									<strong class="at-logo"><a href="/"><img src="{{asset('/template/img/Logof.png')}}" alt="image description"></a></strong>
 									<div class="at-description">
 										<p>Koperasi Berkat Artha Sentosa Diberkati untuk memberkati. </p>
 									</div>
@@ -193,19 +193,19 @@
 									</div>
 									<div class="at-widgetcontent">
 										<ul>
-											<li><a href="javascript:void(0);">Home</a></li>
-											<li><a href="javascript:void(0);">Produk Kami</a></li>
-											<li><a href="javascript:void(0);">Tentang Kami</a></li>
-											<li><a href="javascript:void(0);">News</a></li>
-											<li><a href="javascript:void(0);">Contact Us</a></li>
-											<li><a href="javascript:void(0);">Blog</a></li>
-											<li><a href="javascript:void(0);">Faq</a></li>
-											<li><a href="javascript:void(0);">Brosur Kami</a></li>
+											<li><a href="/">Home</a></li>
+											<li><a href="/produk">Produk Kami</a></li>
+											<li><a href="/about-us">Tentang Kami</a></li>
+											{{-- <li><a href="javascript:void(0);">News</a></li> --}}
+											<li><a href="/contact-us">Contact Us</a></li>
+											{{-- <li><a href="javascript:void(0);">Blog</a></li> --}}
+											<li><a href="/faq">Faq</a></li>
+											{{-- <li><a href="javascript:void(0);">Brosur Kami</a></li> --}}
 										</ul>
 									</div>
 								</div>
 							</div>
-							<div class="at-fcolumn">
+							{{-- <div class="at-fcolumn">
 								<div class="at-widget">
 									<div class="at-fwidgettitle">
 										<h3>Recent News</h3>
@@ -223,7 +223,7 @@
 										</ul>
 									</div>
 								</div>
-							</div>
+							</div> --}}
 						</div>
 						<div class="at-copyright">
 							<p>Copyright &copy; Koperasi Berkat Artha Sentosa {{now()->year}}. All rights reserved.</p>

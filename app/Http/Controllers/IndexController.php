@@ -22,6 +22,11 @@ class IndexController extends Controller
     {
         dd($type,$detail);
     }
+    public function Faq()
+    {
+        $this->data['page'] = 'other';
+        return view('website.faq')->with($this->data);
+    }
     public function produkType($type)
     {
         $this->data['page'] = 'produk';

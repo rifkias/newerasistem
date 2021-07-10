@@ -18,10 +18,11 @@ Route::get('/about-us','IndexController@about')->name('AboutUs');
 Route::get('/produk/{type}','IndexController@produkType')->name('ProdukType');
 Route::get('/produk','IndexController@produk')->name('ProdukView');
 Route::get('/contact-us','IndexController@contactUs')->name('ContactUs');
+Route::get('/faq','IndexController@Faq')->name('Faq');
 
 
 Route::group(['prefix' => 'adminsipbos'], function () {
-
+    Route::get('website/','HomeController@autoRedirect')->name('AutoRedirect');
     Auth::routes();
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('website/banner', 'BannerController@index')->name('banner');
@@ -35,6 +36,7 @@ Route::group(['prefix' => 'adminsipbos'], function () {
     Route::get('website/produk/detail/{id}', 'ProdukController@show')->name('ProdukDetail');
     Route::post('website/produk/edit', 'ProdukController@edit')->name('ProdukEdit');
     Route::post('website/produk/add', 'ProdukController@store')->name('ProdukAdd');
+    Route::post('website/produk/add/subproduk', 'ProdukController@subProdukAdd')->name('subProdukAdd');
     Route::post('website/produk/delete', 'ProdukController@destroy')->name('ProdukDelete');
     Route::post('website/produk/active', 'ProdukController@active')->name('ProdukActive');
 
