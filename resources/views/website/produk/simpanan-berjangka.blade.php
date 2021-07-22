@@ -40,7 +40,7 @@
 										<h2>Simpanan Berjangka</h2>
 									</div>
 									<div class="at-description">
-										<p>Msimpanan berjangka adalah simpanan dari pihak ketiga pada KSP Berkat Artha Sentosa yang penarikannya hanya dapat dilakukan dalam jangka waktu tertentu menurut perjanjian antara pihak ketiga dan KSP Berkat Artha Sentosa. simpanan berjangka ini diterbitkan dengan jenis waktu yang berjangka sesuai dengan periode tertentu. Jangka waktunya bervariasi mulai dari 1,3,6 dan 12 bulan. simpanan berjangka diterbitkan atas nama baik perorangan maupun lembaga, artinya di dalam bilyet simpanan berjangka tercantum nama perorangan atau lembaga si pemilik simpanan berjangka.</p>
+										<p>Simpanan koperasi dalam mata uang rupiah yang dikelola dengan prinsip simpanan pada umumnya,  bisa dilakukan penarikan setiap saat berdasarkan syarat dan ketentuan berlaku yang telah disepakati bersama. Dengan kemudahan saat pembukaan rekening simpanan, proses yang cepat serta bunga yang diperoleh juga menguntungkan.</p>
 										{{-- <ul class="at-liststyle at-liststylearrowright">
 											<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
 											<li>Phasellus non felis malesuada, faucibus dui eget, sodales nibh.</li>
@@ -56,7 +56,7 @@
                                             <h3>Kelebihan Kami</h3>
                                             <ul class="at-liststyle at-liststylearrowright">
                                                 <li>Proses Mudah & Cepat.</li>
-                                                <li>Bersifat Flexible.</li>
+                                                <li>Bersifat Fleksible.</li>
                                                 <li>Bunga Bersaing.</li>
                                                 <li>Dapat diperpanjang otomatis ( Automatic Roll over ).</li>
                                             </ul>
@@ -64,7 +64,7 @@
                                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 pull-left">
                                             <h3>Syarat & Ketentuan</h3>
                                             <ul class="at-liststyle at-liststylearrowright">
-                                                <li>FotoCopi KTP.</li>
+                                                <li>FotoCopy KTP.</li>
                                                 <li>FotoCopy NPWP.</li>
                                                 <li>FotoCopy Lembar depan buku tabungan.</li>
                                                 <li>Pilihan Jangka Waktu 1,3,6 dan 12 Bulan.</li>

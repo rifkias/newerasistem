@@ -57,7 +57,7 @@
 								<h3>Suku Bunga</h3>
 							</div>
 							<div class="at-description">
-								<p>Suku bunga kami terjangkau dan kompetitif.<br><br><br></p>
+								<p>Suku bunga kami terjangkau dan kompetitif.<br><br></p>
 							</div>
 						</div>
 					</div>
@@ -298,31 +298,36 @@
 							<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 pull-left">
 								<div class="at-requestacallback">
 									<div class="at-textcontent">
-										<div class="at-sectiontitleborder"><h2>Request a Call Back</h2></div>
+										<div class="at-sectiontitleborder"><h2>Biarkan Kami menghubungi anda</h2></div>
 										<div class="at-description">
-											<p>Donec mollis lacus sit amet sem vehicula, et laoreet dolor fermentum. Integer ac auctor velit.</p>
-											<p><strong>For Investment:</strong> Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipis civelit sed quia non qui dolorem or phone <a href="javascript:void(0);">+1(123) 456 654 3210</a> ipsum quia dolor sit amet, consectetur.</p>
+											<p>Jangan sungkan untuk bertanya Call Center kami dengan senang hati menjawab semua pertanyaan anda, atau anda bisa melihat <strong><a href="/faq" style="text-decoration:none;">FAQ</a></strong> yang sudah kami sediakan.</p>
+											<p>Jika anda ingin berkunjung langsung ke kantor kami anda bisa mengunjungi alamat kami yang ada  pada peta di bawah ini, kami akan menyambut kedatangan anda dengan sepenuh hati</p>
+											<p>Jika ada pertanyaan yang ingin anda tanyakan, anda bisa langsung mengisi form ini dan kami akan menjawabnya secepat mungkin</p>
 										</div>
 									</div>
 									<form class="at-formtheme at-formrequestcallback">
 										<fieldset>
 											<div class="form-group">
-												<input type="text" name="yourname" class="form-control" placeholder="Your Name">
+												<input type="text" name="name" class="form-control" placeholder="Masukan Nama Anda">
 											</div>
 											<div class="form-group">
-												<input type="email" name="email" class="form-control" placeholder="Email Address">
+												<input type="email" name="email" class="form-control" placeholder="Masukan Email Anda">
 											</div>
 											<div class="form-group">
-												<input type="text" name="contactus" class="form-control" placeholder="Contact Us">
+												<input type="text" name="phone" class="form-control" placeholder="Masukan Nomor Telpon Anda">
 											</div>
 											<div class="form-group">
 												<span class="at-select">
 													<select>
-														<option value="">How can we help?</option>
-														<option value="">How can we help?</option>
-														<option value="">How can we help?</option>
+														<option value="" disabled selected>Jenis Pertanyaan</option>
+														<option value="">Tentang Koperasi Berkat Artha Sentosa</option>
+														<option value="">Tentang Produk Kami</option>
+														<option value="">Lainnya</option>
 													</select>
 												</span>
+											</div>
+                                            <div class="form-group">
+												<textarea name="question" class="form-control" placeholder="Masukan Pertanyaan anda disini" rows="5" style="height: auto!important;"></textarea>
 											</div>
 											<div class="at-btns">
 												<button class="at-btn at-btnb" type="submit">request callback</button>
@@ -371,7 +376,7 @@
 									</li>
 									<li>
 										<i class="icon-icons74"></i>
-										<address>Hayam Wuruk Plaza Tower, Jl. Hayam Wuruk No.108, RT.4/RW.9, Maphar, Kec. Taman Sari, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11160</address>
+										<address>Hayam Wuruk Plaza Tower Lt.6-F, Jl. Hayam Wuruk No.108, RT.4/RW.9, Maphar, Kec. Taman Sari, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11160</address>
 									</li>
 								</ul>
 							</div>

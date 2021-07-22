@@ -24,7 +24,7 @@
                                 </li>
                                 <li>
                                     <i class="icon-icons74"></i>
-                                    <address>Hayam Wuruk Plaza Tower, Jl. Hayam Wuruk No.108, RT.4/RW.9, Maphar, Kec. Taman Sari, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11160</address>
+                                    <address>Hayam Wuruk Plaza Tower Lt.6-F, Jl. Hayam Wuruk No.108, RT.4/RW.9, Maphar, Kec. Taman Sari, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11160</address>
                                 </li>
                             </ul>
                         </div>
