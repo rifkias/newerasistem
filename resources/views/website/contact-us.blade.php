@@ -36,37 +36,38 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <form class="at-formtheme at-formcontacus">
+                    <form class="at-formtheme at-formcontacus" action="{{route('SendContactUs')}}" method="POST">
                         <div class="at-sectiontitleborder">
                             <h2>Contact Us</h2>
                         </div>
                         <fieldset>
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-left">
-                                    <div class="form-group">
-                                        <input type="text" name="name" class="form-control" placeholder="Name">
+                            @csrf
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-left">
+                                        <div class="form-group">
+                                            <input type="text" name="name" class="form-control" placeholder="Name">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-left">
-                                    <div class="form-group">
-                                        <input type="email" name="emailaddress" class="form-control" placeholder="Email Address">
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-left">
+                                        <div class="form-group">
+                                            <input type="email" name="emailaddress" class="form-control" placeholder="Email Address">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-left">
-                                    <div class="form-group">
-                                        <input type="text" name="phonenumber" class="form-control" placeholder="Phone Number">
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-left">
+                                        <div class="form-group">
+                                            <input type="text" name="phonenumber" class="form-control" placeholder="Phone Number">
 
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pull-left">
+                                        <div class="form-group">
+                                            <textarea name="message" class="form-control" placeholder="Message"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pull-left">
+                                        <button type="submit" class="at-btn at-btnw">Submit</button>
                                     </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pull-left">
-                                    <div class="form-group">
-                                        <textarea name="message" class="form-control" placeholder="Message"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pull-left">
-                                    <button type="button" class="at-btn at-btnw">Submit</button>
-                                </div>
-                            </div>
                         </fieldset>
                     </form>
                 </div>

@@ -22,6 +22,7 @@
 	<link rel="stylesheet" href="{{asset('/template/css/color.css')}}">
 	<link rel="stylesheet" href="{{asset('/template/css/responsive.css')}}">
 	<script src="{{asset('/template/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')}}"></script>
+    @stack('css')
 </head>
 <body class="at-home at-homeone">
 	<!--[if lt IE 8]>
@@ -181,8 +182,8 @@
 									</div>
 									<ul class="at-socialicons">
 										<li class="at-facebook"><a href="javascript:void(0);"><i class="fa fa-facebook"></i></a></li>
-										<li class="at-twitter"><a href="javascript:void(0);"><i class="fa fa-twitter"></i></a></li>
-										<li class="at-instagram"><a href="javascript:void(0);"><i class="fa fa-instagram"></i></a></li>
+										<li class="at-twitter"><a target="_blank" href="https://twitter.com/KSipbos?s=08"><i class="fa fa-twitter"></i></a></li>
+										<li class="at-instagram"><a target="_blank" href="https://instagram.com/sipbos_id?utm_medium=copy_link"><i class="fa fa-instagram"></i></a></li>
 									</ul>
 								</div>
 							</div>
@@ -254,5 +255,6 @@
 	<script src="{{asset('/template/js/appear.js')}}"></script>
 	<script src="{{asset('/template/js/gmap3.js')}}"></script>
 	<script src="{{asset('/template/js/function.js')}}"></script>
+    @stack('script')
 </body>
 </html>

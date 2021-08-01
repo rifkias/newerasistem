@@ -138,13 +138,56 @@
 							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-top:20px;text-align:center">
                                 <button class="btn btn-lg btn-primary"><i class="fa fa-download" aria-hidden="true"></i> Unduh Brosur</button>
                                 <button class="btn btn-lg btn-success"><i class="fa fa-whatsapp" aria-hidden="true"></i> Kontak Kami Sekarang</button>
+                                <button class="btn btn-lg btn-primary" onclick="showModal()"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Daftar Sekarang</button>
                             </div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</main>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Form Registrasi Simpanan Sipbos</h4>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <form action="/registrasi/simpanan-sipbos" method="POST">
+                        @csrf
+                        <div class="form-group">
+                            <label for="nama">Nama</label>
+                            <input type="text" class="form-control" required id="nama" name="nama" placeholder="Nama">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" required id="email" name="email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Nomor Telpon</label>
+                            <input type="text" class="form-control" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" required id="phone" name="phone" placeholder="Nomor Telpon">
+                        </div>
+                </div>
+                <p>Silakan Isi form di atas dengan benar dan kami akan langsung menghubungi anda</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Kirim <i class="fa fa-paper-plane"></i></button>
+            </div>
+        </form>
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
 		<!--************************************
 				Main End
 		*************************************-->
 @endsection
+@push('script')
+    <script>
+        function showModal() {
+            $('#myModal').modal('show');
+        }
+    </script>
+@endpush

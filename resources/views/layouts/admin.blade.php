@@ -13,6 +13,7 @@
     <title>SipBos - Admin</title>
     <!-- Custom CSS -->
     <link href="{{asset('/admin/css/style.min.css')}}" rel="stylesheet">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     @stack('css')
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -107,7 +108,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <img src="{{asset('/admin/images/users/2.jpg')}}" alt="user" class="rounded-circle" width="40">
-                                <span class="m-l-5 font-medium d-none d-sm-inline-block">Jonathan Doe <i class="mdi mdi-chevron-down"></i></span>
+                                <span class="m-l-5 font-medium d-none d-sm-inline-block">{{Auth::user()->name}} <i class="mdi mdi-chevron-down"></i></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
                                 <span class="with-arrow">
@@ -118,20 +119,20 @@
                                         <img src="{{asset('/admin/images/users/2.jpg')}}" alt="user" class="rounded-circle" width="60">
                                     </div>
                                     <div class="m-l-10">
-                                        <h4 class="m-b-0">Jonathan Doe</h4>
-                                        <p class=" m-b-0">jon@gmail.com</p>
+                                        <h4 class="m-b-0">{{Auth::user()->name}}</h4>
+                                        <p class=" m-b-0">{{Auth::user()->email}}</p>
                                     </div>
                                 </div>
                                 <div class="profile-dis scrollable">
                                     <a class="dropdown-item" href="javascript:void(0)">
                                         <i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
-                                    <a class="dropdown-item" href="javascript:void(0)">
+                                    {{-- <a class="dropdown-item" href="javascript:void(0)">
                                         <i class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>
                                     <a class="dropdown-item" href="javascript:void(0)">
                                         <i class="ti-email m-r-5 m-l-5"></i> Inbox</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
+                                        <i class="ti-settings m-r-5 m-l-5"></i> Account Setting</a> --}}
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         <i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
@@ -191,6 +192,14 @@
                                 </li>
                             </ul>
                         </li>
+                        @if(Auth::user()->role == 'admin')
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark" href="/adminsipbos/user" aria-expanded="false">
+                                <i class="mdi mdi-account-multiple"></i>
+                                <span class="hide-menu">User </span>
+                            </a>
+                        </li>
+                        @endif
                         <li class="nav-small-cap">
                             <i class="mdi mdi-dots-horizontal"></i>
                             <span class="hide-menu">Other</span>
@@ -301,6 +310,8 @@
     <script src="{{asset('/admin/js/sidebarmenu.js')}}"></script>
     <!--Custom JavaScript -->
     <script src="{{asset('/admin/js/custom.min.js')}}"></script>
+    {{-- Autosize Textarea --}}
+    <script src="{{asset('/admin/extra-libs/autosize/autosize.min.js')}}"></script>
     {{-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> --}}
     <!--This page JavaScript -->
     {{-- <!--chartis chart-->

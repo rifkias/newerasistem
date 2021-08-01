@@ -123,6 +123,12 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+    // Global Variable
+    'telegram_token' => '1911816245:AAH7noPlEsdLDaipcwOwr1K8ngR74PzELHU',
+    // Dev Group
+    'telegram_chatid' => "-1001586905898",
+    // Prod Group
+    // 'telegram_chatid' => "-468851240",
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers

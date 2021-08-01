@@ -13,3 +13,9 @@
         toastr.success('{{$message}}', 'Success!!');
 </script>
 @endif
+
+@if ($message = Session::get('status'))
+<script>
+        toastr.success('{{$message}}', 'Success!!');
+</script>
+@endif

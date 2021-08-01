@@ -52,6 +52,7 @@
 											<li><a href="#at-companyhistory">Sejarah Koperasi Berkat Artha Sentosa</a></li>
 											<li><a href="#at-whatwedo">Kelebihan Kami</a></li>
 											<li><a href="#at-ourexpertteam">Struktur Pengurus</a></li>
+											<li><a href="#at-legal">Legalitas Kami</a></li>
 											{{-- <li><a href="#at-clientfeedback">Testimonials</a></li>
 											<li><a href="#at-careers">Careers</a></li> --}}
 										</ul>
@@ -162,7 +163,7 @@
 											<h2>Mengapa Memilih Koperasi <span style="color:#2c67f4;">Berkat Artha Sentosa</span></h2>
 										</div>
 										<div class="at-description">
-											<p>.</p>
+											{{-- <p>.</p> --}}
 										</div>
 									</div>
 									<div id="at-whatwedoslider" class="at-whatwedoslider at-features owl-carousel">
@@ -173,7 +174,7 @@
                                                     <h3>Suku Bunga</h3>
                                                 </div>
                                                 <div class="at-description">
-                                                    <p>Suku bunga kami terjangkau dan kompetitif.</p>
+                                                    <p>Suku bunga kami terjangkau dan kompetitif.</p><br>
                                                 </div>
                                             </div>
 										</div>
@@ -244,30 +245,30 @@
 										</div>
 									</div>
                                     <div class="row">
-                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12" style="margin-bottom: 15px;">
                                             <div class="at-membercontent">
                                                 <h3>Harun Jonathan</h3><br>
-                                                <span>Ketua Koperasi</span>
+                                                <span style="padding:0px;">Ketua Koperasi</span>
                                             </div>
                                         </div>
-                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12" style="margin-bottom: 15px;">
                                             <div class="at-membercontent">
                                                 <h3>Theo Anthares</h3><br>
-                                                <span>Sekertaris</span>
+                                                <span style="padding:0px;">Sekertaris</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row" style="margin-top:20px;">
-                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12" style="margin-bottom: 15px;">
                                             <div class="at-membercontent">
                                                 <h3>Celine Rosavina</h3><br>
-                                                <span>Bendahara</span>
+                                                <span style="padding:0px;">Bendahara</span>
                                             </div>
                                         </div>
-                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12" style="margin-bottom: 15px;">
                                             <div class="at-membercontent">
                                                 <h3>Yayat Supriyatna</h3><br>
-                                                <span>Pengawas</span>
+                                                <span style="padding:0px;">Pengawas</span>
                                             </div>
                                         </div>
                                     </div>
@@ -299,13 +300,186 @@
 										</li>
 									</ul> --}}
 								</section>
+
+                                {{-- <section id="at-legal" class="at-whatwedo at-aboutsection">
+									<div class="at-sectionhead">
+										<div class="at-sectiontitleborder">
+											<h2>Legalitas Kami</h2>
+										</div>
+										<div class="at-description">
+											<p>.</p>
+										</div>
+									</div>
+                                    <div id="at-legal" class="at-legalslider at-features owl-carousel">
+										<div class="item">
+											<div class="at-feature">
+                                                <span class="at-featureicon"><i class="fa fa-percent"></i></span>
+                                                <div class="at-title">
+                                                    <h3>Suku Bunga</h3>
+                                                </div>
+                                                <div class="at-description">
+                                                    <p>Suku bunga kami terjangkau dan kompetitif.</p><br>
+                                                </div>
+                                            </div>
+										</div>
+										<div class="item">
+											<div class="at-feature">
+                                                <span class="at-featureicon"><i class="icon-safebox"></i></span>
+                                                <div class="at-title">
+                                                    <h3>Aman & Terpercaya</h3>
+                                                </div>
+                                                <div class="at-description">
+                                                    <p>Karena dikelola oleh personal yang sudah berpengalaman dibidangnya.</p>
+                                                </div>
+                                            </div>
+										</div>
+										<div class="item">
+											<div class="at-feature">
+                                                <span class="at-featureicon"><i class="fa fa-bolt"></i></span>
+                                                <div class="at-title">
+                                                    <h3>Pencairan Cepat</h3>
+                                                </div>
+                                                <div class="at-description">
+                                                    <p>Proses pencairan yang cepat sesuai dengan prosedur perusahaan.</p>
+                                                </div>
+                                            </div>
+										</div>
+										<div class="item">
+											<div class="at-feature">
+                                                <span class="at-featureicon"><i class="icon-money-bag"></i></span>
+                                                <div class="at-title">
+                                                    <h3>Nilai Pinjaman Tinggi</h3>
+                                                </div>
+                                                <div class="at-description">
+                                                    <p>Kami memberikan Pinjaman Tinggi berdasarkan jenis jaminan yang diberikan oleh calon debitur.</p>
+                                                </div>
+                                            </div>
+										</div>
+									</div>
+								</section> --}}
+                                <section id="at-whatwedo" class="at-whatwedo at-aboutsection">
+									<div class="at-sectionhead">
+										<div class="at-sectiontitleborder">
+											<h2>Legalitas Kami</h2>
+										</div>
+										<div class="at-description">
+											{{-- <p>.</p> --}}
+										</div>
+									</div>
+									<div id="at-legalslider" class="at-legalslider at-features owl-carousel">
+										<div class="item">
+											<div class="at-feature">
+                                                {{-- <span class="at-featureicon"><i class="fa fa-percent"></i></span> --}}
+                                                <div class="at-title">
+                                                    <h3>Sertifikat NIK <br> (Nomor Induk Koperasi)</h3>
+                                                </div>
+                                                <div class="at-description">
+                                                    <p>No. 3174050020001 <br> Tanggal : 30 Juli 2019</p>
+                                                    <button onclick="ShowPDF('Sertifikat NIK','nik.pdf')" class="btn btn-success"><i class="fa fa-eye"></i> Lihat PDF</button>
+                                                </div>
+                                            </div>
+										</div>
+										<div class="item">
+											<div class="at-feature">
+                                                <div class="at-title">
+                                                    <h3>NIB<br> (Nomor Induk Berusaha)</h3>
+                                                </div>
+                                                <div class="at-description">
+                                                    <p>No.0292010202094 <br> Tanggal : 29 Desember 2020</p>
+                                                    <button onclick="ShowPDF('Nomor Induk Berusaha','nib.pdf')" class="btn btn-success"><i class="fa fa-eye"></i> Lihat PDF</button>
+                                                </div>
+                                            </div>
+										</div>
+										<div class="item">
+											<div class="at-feature">
+                                                <div class="at-title">
+                                                    <h3>Surat Pengesahan Koperasi<br><br></h3>
+                                                </div>
+                                                <div class="at-description">
+                                                    <p>No.AHU-000757.AH.01.26.TAHUN 2020<br>Tanggal : 28 Desember 2020</p>
+                                                    <button onclick="ShowPDF('Surat Pengesahan Koperasi','pengesahan.pdf')" class="btn btn-success"><i class="fa fa-eye"></i> Lihat PDF</button>
+                                                </div>
+                                            </div>
+										</div>
+										<div class="item">
+											<div class="at-feature">
+                                                <div class="at-title">
+                                                    <h3>Akta Pendirian<br><br></h3>
+                                                </div>
+                                                <div class="at-description" >
+                                                    <p>No.2334 <br> Tanggal : 28-12-2020.</p>
+                                                </div>
+                                                <button onclick="ShowPDF('Akta Pendirian','akta.pdf')" class="btn btn-success"><i class="fa fa-eye"></i> Lihat PDF</button>
+                                            </div>
+										</div>
+									</div>
+								</section>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</main>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="pdfTitle"></h4>
+                </div>
+                <div class="modal-body">
+                    <div style="height: 500px; width:100%;margin-bottom:10px;">
+                        <iframe src="" id="pdfPlace" frameborder="0" height="500px;" width="100%">
+                        </iframe>
+                        {{-- <iframe src="https://docs.google.com/viewerng/viewer?url=http://infolab.stanford.edu/pub/papers/google.pdf&embedded=true" id="pdfPlace" frameborder="0" height="500px;" width="100%">
+                        </iframe> --}}
+                    </div>
+                    Jika PDF tidak muncul silakan download PDF
+
+                </div>
+                <div class="modal-footer" id="footerButton">
+                  {{-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" id="PDFDownloadButton"><i class="fa fa-download"></i> Download PDF</button>--}}
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
 		<!--************************************
 				Main End
 		*************************************-->
+@endsection
+
+@section('script')
+    <script>
+function ShowPDF(name,src) {
+    $('#pdfTitle').text(name);
+    $('#pdfPlace').attr('src','/img/legalitas/'+src);
+    $('#myModal').modal('show');
+    var list = $('#footerButton').children();
+    if(list.length !== 0){
+      $('#buttonDownload').remove();
+    }
+    $('#footerButton').append('<button type="button" id="buttonDownload" onclick="window.open(`/img/legalitas/'+src+'`)" class="btn btn-primary" id="PDFDownloadButton"><i class="fa fa-download"></i> Download PDF</button>');
+}
+function downloadPDF(src){
+
+}
+	if(jQuery('#at-legalslider').length > 0){
+		jQuery('#at-legalslider').owlCarousel({
+			items: 2,
+			nav: true,
+			margin: 30,
+			loop: true,
+			dots: true,
+			autoplay: true,
+			// dotsClass: 'at-sliderdots',
+			navClass: ['at-prev', 'at-next'],
+			navContainerClass: 'at-slidernav',
+			responsive: {
+				0: { items: 1, },
+				768: { items: 2, },
+			}
+		});
+	}
+    </script>
 @endsection

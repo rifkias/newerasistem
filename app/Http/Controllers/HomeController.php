@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use App\User;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -17,7 +17,10 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
-
+    public function autoRedirect()
+    {
+        Return redirect('adminsipbos/');
+    }
     /**
      * Show the application dashboard.
      *

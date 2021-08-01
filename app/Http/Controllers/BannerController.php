@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Banner;
+use App\Models\Banner;
 use Illuminate\Http\Request;
 
 use Session,File;

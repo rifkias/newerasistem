@@ -2201,6 +2201,10 @@ li.at-rss a { background:#ff6600; }
 	padding: 0 3px;
 	overflow: hidden;
 }
+.at-legalslider .at-whatwedoslider{
+	padding: 0 3px;
+	overflow: hidden;
+}
 .at-aboutsection .at-whatwedoslider .owl-stage-outer{overflow: visible;}
 .at-aboutsection .at-whatwedoslider .at-sliderdots{display: none;}
 .at-aboutsection .at-whatwedoslider + .at-counter{

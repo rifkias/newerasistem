@@ -35,43 +35,49 @@
 						<div class="at-services at-servicesvone">
 							<div class="row">
 								<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 pull-left">
-									<div class="at-service">
-										<figure class="at-serviceimg">
-											<figcaption>
-												<h2><a href="/produk/simpanan-sipbos">Simpanan SipBos</a></h2>
-												<div class="at-description">
-													<p>Simpanan yang sifatnya fleksibel yang bisa di setor dan ditarik dimana saja kapan saja selama jam operasional koperasi berlangsung, untuk nominal tertentu penarikan bisa dilakukan tanpa konfirmasi terlebih dahulu.</p>
-												</div>
-											</figcaption>
-											<img src="{{asset('/img/produk/produk-simpanan.jpg')}}" alt="image description">
-										</figure>
-									</div>
+                                    <a href="/produk/simpanan-sipbos">
+                                        <div class="at-service">
+                                            <figure class="at-serviceimg">
+                                                <figcaption>
+                                                    <h2 style="color:white">Simpanan SipBos</h2>
+                                                    <div class="at-description">
+                                                        <p>Simpanan yang sifatnya fleksibel yang bisa di setor dan ditarik dimana saja kapan saja selama jam operasional koperasi berlangsung, untuk nominal tertentu penarikan bisa dilakukan tanpa konfirmasi terlebih dahulu.</p>
+                                                    </div>
+                                                </figcaption>
+                                                <img src="{{asset('/img/produk/produk-simpanan.jpg')}}" alt="image description">
+                                            </figure>
+                                        </div>
+                                    </a>
 								</div>
 								<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 pull-left">
-									<div class="at-service">
-										<figure class="at-serviceimg">
-											<figcaption>
-												<h2><a href="/produk/simpanan-berjangka">Simpanan Berjangka</a></h2>
-												<div class="at-description">
-													<p>Produk simpanan dengan suku bunga yang kompetitif yang penarikannya dilakukan dalam jangka waktu sesuai dengan perjanjian yang disetujui.</p>
-												</div>
-											</figcaption>
-											<img src="{{asset('/img/produk/produk-simpanan-berjangka.jpg')}}" alt="image description">
-										</figure>
-									</div>
+                                    <a href="/produk/simpanan-berjangka">
+                                        <div class="at-service">
+                                            <figure class="at-serviceimg">
+                                                <figcaption>
+                                                    <h2 style="color:white">Simpanan Berjangka</h2>
+                                                    <div class="at-description">
+                                                        <p>Produk simpanan dengan suku bunga yang kompetitif yang penarikannya dilakukan dalam jangka waktu sesuai dengan perjanjian yang disetujui.</p>
+                                                    </div>
+                                                </figcaption>
+                                                <img src="{{asset('/img/produk/produk-simpanan-berjangka.jpg')}}" alt="image description">
+                                            </figure>
+                                        </div>
+                                    </a>
 								</div>
 								<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 pull-left">
-									<div class="at-service">
-										<figure class="at-serviceimg">
-											<figcaption>
-												<h2><a href="/produk/pinjaman">Pinjaman</a></h2>
-												<div class="at-description">
-													<p>Kami menyediakan pinjaman untuk para anggota baik untuk penambahan modal usaha atau untuk modal usaha baru yang bertujuan untuk mensejahterakan anggota.</p>
-												</div>
-											</figcaption>
-											<img src="{{asset('/img/produk/produk-pinjam.jpg')}}" alt="image description">
-										</figure>
-									</div>
+                                    <a href="/produk/pinjaman">
+                                        <div class="at-service">
+                                            <figure class="at-serviceimg">
+                                                <figcaption>
+                                                    <h2 style="color:white">Pinjaman</h2>
+                                                    <div class="at-description">
+                                                        <p>Kami menyediakan pinjaman untuk para anggota baik untuk penambahan modal usaha atau untuk modal usaha baru yang bertujuan untuk mensejahterakan anggota.</p>
+                                                    </div>
+                                                </figcaption>
+                                                <img src="{{asset('/img/produk/produk-pinjam.jpg')}}" alt="image description">
+                                            </figure>
+                                        </div>
+                                    </a>
 								</div>
 								{{-- <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 pull-left">
 									<div class="at-service">
