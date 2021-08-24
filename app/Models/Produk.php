@@ -14,6 +14,6 @@ class Produk extends Model
 
     public function SubProduk()
     {
-        return $this->hasMany('App\SubProduk','produk_id','id');
+        return $this->hasMany('App\Models\SubProduk','produk_id','id');
     }
 }

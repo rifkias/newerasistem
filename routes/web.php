@@ -46,6 +46,9 @@ Route::group(['prefix' => 'adminsipbos'], function () {
         Route::post('website/produk/delete/subproduk','ProdukController@subProdukDelete')->name('subProdukDelete');
         Route::post('website/produk/delete/foto','ProdukController@DeleteImg')->name('ImgDelete');
 
+        Route::get('user/profile','UserController@userProfile')->name('userProfile');
+        Route::post('user/profile/update','UserController@userProfileUpdate')->name('userProfileUpdate');
+
         Route::middleware('FilterRole')->group(function(){
             Route::get('user', 'UserController@index')->name('User');
             Route::post('user/add', 'UserController@store')->name('AddUser');

@@ -36,6 +36,16 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    function pageDetail($level,$page,$breadcrumb)
+    {
+        $data = [
+            'level'         => $level,
+            'page'          => $page,
+            'breadcrumb'    => $breadcrumb,
+        ];
+        return $data;
+        # code...
+    }
     public function store(Request $request)
     {
         $valid = [
@@ -64,6 +74,41 @@ class UserController extends Controller
         User::create($masuk);
         dd($request->all(),$masuk);
         return redirect()->back();
+    }
+    public function userProfile()
+    {
+        $pageDetail = $this->pageDetail('1','User','Profile');
+        $this->data['pageDetail'] = $pageDetail;
+        return view('admin.user_profile')->with($this->data);
+    }
+    public function userProfileUpdate(Request $request)
+    {
+        $valid = [];
+        $masuk = [];
+        if($request->nama){
+            $valid['nama'] = 'required|max:225';
+            $masuk['name'] = $request->nama;
+        }
+        if($request->password){
+            $valid['password'] = 'required|max:225|confirmed';
+            $masuk['password'] = Hash::make($request->password);
+        }
+        if($request->phone){
+            $valid['phone'] = 'required|numeric|digits_between:0,13';
+            $masuk['phone'] = $request->phone;
+        }
+        if($request->userPict){
+            $valid['userPict'] = 'required|max:2048"';
+        }
+        $this->validate($request,$valid);
+        if($request->userPict){
+            $Filename = $this->uploadFile($request->userPict);
+            $masuk['user_pict'] = $Filename;
+        }
+        User::where('id',Auth::user()->id)->update($masuk);
+        Session::flash('success','Data berhasil disimpan');
+        return back();
+        // dd($request);
     }
     function uploadFile($file)
     {

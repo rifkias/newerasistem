@@ -124,9 +124,9 @@ return [
     'cipher' => 'AES-256-CBC',
 
     // Global Variable
-    'telegram_token' => '1911816245:AAH7noPlEsdLDaipcwOwr1K8ngR74PzELHU',
+    'telegram_token' => env('TELEGRAM_TOKEN'),
     // Dev Group
-    'telegram_chatid' => "-1001586905898",
+    'telegram_chatid' => env('TELEGRAM_CHATID'),
     // Prod Group
     // 'telegram_chatid' => "-468851240",
     /*

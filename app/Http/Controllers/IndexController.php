@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Mail,Session,Config;
+use Mail,Session,Config,Exception;
+use Illuminate\Support\Facades\Http;
 use App\Models\Banner;
 use App\Models\ContactUs;
 use App\Models\ClientRegisterProduct;
@@ -34,11 +35,13 @@ class IndexController extends Controller
     }
     function TelegramMessage($pesan)
     {
-        $token = Config::get('app.telegram_token');
-        $chatID = Config::get('app.telegram_chatid');
+        $token = Config('app.telegram_token');
+        $chatID = Config('app.telegram_chatid');
+        // dd($token,$chatID);
         $url = "https://api.telegram.org/bot" . $token . "/sendMessage?chat_id=" . $chatID;
         $url = $url . "&text=" . urlencode($pesan);
         $url = $url . "&parse_mode=markdown";
+
         $ch = curl_init();
         $optArray = array(
                 CURLOPT_URL => $url,
@@ -46,7 +49,11 @@ class IndexController extends Controller
         );
         curl_setopt_array($ch, $optArray);
         $result = curl_exec($ch);
+        if ($result === false) {
+            throw new Exception(curl_error($ch), curl_errno($ch));
+        }
         curl_close($ch);
+
         return $result;
     }
     public function ProductRegister(Request $request,$type)
@@ -60,9 +67,9 @@ class IndexController extends Controller
         ClientRegisterProduct::create($data);
         $content = view('email.user_register_product')->with($data);
         Mail::send('layouts.email', ['contentMessage' => $content], function($message) {
-            $message->to('rifkialfarizshidiq.1@gmail.com')->subject('Registered Client From Website');
+            $message->to('sipbos2021.1@gmail.com')->cc('rifkialfarizshidiq.1@gmail.com')->subject('Registered Client From Website');
         });
-        $this->TelegramMessage("Ada yang registrasi dari website silakan cek email \n\n *Nama* : $request->nama \n *Email* : $request->email \n *Nomor Telpon* : $request->phone \n *Tipe Produk* : ".str_replace('-',' ',$type));
+        $a = $this->TelegramMessage("Ada yang registrasi dari website silakan cek email \n\n *Nama* : $request->nama \n *Email* : $request->email \n *Nomor Telpon* : $request->phone \n *Tipe Produk* : ".str_replace('-',' ',$type));
         Session::flash('success','Terima Kasih telah mengisi form, Silakan tunggu petugas kami menghubungi anda');
         return back();
     }
@@ -76,9 +83,9 @@ class IndexController extends Controller
         ]);
         $content = view('email.contactus')->with($request->all());
         Mail::send('layouts.email', ['contentMessage' => $content], function($message) {
-            $message->to('rifkialfarizshidiq.1@gmail.com')->subject('User Contact From Website');
+            $message->to('sipbos2021@gmail.com')->cc('rifkialfarizshidiq.1@gmail.com')->subject('User Contact From Website');
         });
-        $this->TelegramMessage("Ada yang menghubungi dari website silakan cek email \n\n *Nama* : $request->name \n *Email* : $request->emailaddress \n *Nomor Telpon* : $request->phonenumber \n *Pesan* : $request->message");
+        $a = $this->TelegramMessage("Ada yang menghubungi dari website silakan cek email \n\n *Nama* : $request->name \n *Email* : $request->emailaddress \n *Nomor Telpon* : $request->phonenumber \n *Pesan* : $request->message");
         Session::flash('success','Terima Kasih telah menghubungi kami');
         return back();
         // return view('email.contactus')->with($request->all());
@@ -112,7 +119,7 @@ class IndexController extends Controller
     public function test()
     {
         // dd($this->TelegramMessage("Ada yang menghubungi dari website silakan cek email \n test"));
-
+        dd(Config('app.telegram_chatid'));
         return view('email.user_register_product');
     }
 }

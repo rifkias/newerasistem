@@ -107,7 +107,8 @@
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="{{asset('/admin/images/users/2.jpg')}}" alt="user" class="rounded-circle" width="40">
+                                {{-- <img src="{{asset('/admin/images/users/2.jpg')}}" alt="user" class="rounded-circle" style="width: 40px;height:40px;"> --}}
+                                <img src="@if(Auth::user()->user_pict !== null) {{asset('/img/user/'.Auth::user()->user_pict)}} @else {{asset('/img/user/user.png')}} @endif" alt="user" class="rounded-circle" style="width: 40px;height:40px;">
                                 <span class="m-l-5 font-medium d-none d-sm-inline-block">{{Auth::user()->name}} <i class="mdi mdi-chevron-down"></i></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
@@ -116,7 +117,7 @@
                                 </span>
                                 <div class="d-flex no-block align-items-center p-15 bg-primary text-white m-b-10">
                                     <div class="">
-                                        <img src="{{asset('/admin/images/users/2.jpg')}}" alt="user" class="rounded-circle" width="60">
+                                        <img src="@if(Auth::user()->user_pict !== null) {{asset('/img/user/'.Auth::user()->user_pict)}} @else {{asset('/img/user/user.png')}} @endif" alt="user" class="rounded-circle" width="60" height="60">
                                     </div>
                                     <div class="m-l-10">
                                         <h4 class="m-b-0">{{Auth::user()->name}}</h4>
@@ -124,7 +125,7 @@
                                     </div>
                                 </div>
                                 <div class="profile-dis scrollable">
-                                    <a class="dropdown-item" href="javascript:void(0)">
+                                    <a class="dropdown-item" href="/adminsipbos/user/profile">
                                         <i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
                                     {{-- <a class="dropdown-item" href="javascript:void(0)">
                                         <i class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>
@@ -138,9 +139,9 @@
                                         <i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
                                     <div class="dropdown-divider"></div>
                                 </div>
-                                <div class="p-l-30 p-10">
+                                {{-- <div class="p-l-30 p-10">
                                     <a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded">View Profile</a>
-                                </div>
+                                </div> --}}
                             </div>
                         </li>
                         <!-- ============================================================== -->
@@ -240,8 +241,6 @@
                                         <a href="#">Home</a>
                                     </li>
                                     @if(@$pageDetail['level'] == '1')
-                                        <li class="breadcrumb-item active" aria-current="page">{{@$pageDetail['breadcrumb']}}</li>
-                                    @else
                                         <li class="breadcrumb-item active" aria-current="page">{{@$pageDetail['breadcrumb']}}</li>
                                     @endif
                                 </ol>
