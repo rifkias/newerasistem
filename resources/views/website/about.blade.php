@@ -52,7 +52,7 @@
 											<li><a href="#at-companyhistory">Sejarah Koperasi Berkat Artha Sentosa</a></li>
 											<li><a href="#at-whatwedo">Kelebihan Kami</a></li>
 											<li><a href="#at-ourexpertteam">Struktur Pengurus</a></li>
-											<li><a href="#at-legal">Legalitas Kami</a></li>
+											{{-- <li><a href="#at-legal">Legalitas Kami</a></li> --}}
 											{{-- <li><a href="#at-clientfeedback">Testimonials</a></li>
 											<li><a href="#at-careers">Careers</a></li> --}}
 										</ul>
@@ -66,11 +66,11 @@
 										<div class="at-description">
 											<p>Jangan sungkan bertanya kepada kami, customer service kami dengan senang hati menjawab semua pertanyaan anda.</p>
 										</div>
-										<a class="at-btn at-btnw" href="javascript:void(0);">contact us</a>
+										<a class="at-btn at-btnw" href="/contact-us">contact us</a>
 										<div class="at-companypresentation">
-											<a href="javascript:void(0);">
+											<a href="{{asset('files/Compro%20Koperasi.pdf')}}" target="_blank">
 												<i class="icon-file-pdf"></i>
-												<span>Company Presentation</span>
+												<span>Company Profile</span>
 											</a>
 										</div>
 									</div>
@@ -357,7 +357,7 @@
 										</div>
 									</div>
 								</section> --}}
-                                <section id="at-whatwedo" class="at-whatwedo at-aboutsection">
+                                <!--<section id="at-whatwedo" class="at-whatwedo at-aboutsection">
 									<div class="at-sectionhead">
 										<div class="at-sectiontitleborder">
 											<h2>Legalitas Kami</h2>
@@ -366,7 +366,7 @@
 											{{-- <p>.</p> --}}
 										</div>
 									</div>
-									<div id="at-legalslider" class="at-legalslider at-features owl-carousel">
+									 <div id="at-legalslider" class="at-legalslider at-features owl-carousel">
 										<div class="item">
 											<div class="at-feature">
                                                 {{-- <span class="at-featureicon"><i class="fa fa-percent"></i></span> --}}
@@ -413,7 +413,7 @@
                                             </div>
 										</div>
 									</div>
-								</section>
+								</section>-->
 							</div>
 						</div>
 					</div>
@@ -451,19 +451,19 @@
 
 @section('script')
     <script>
-function ShowPDF(name,src) {
-    $('#pdfTitle').text(name);
-    $('#pdfPlace').attr('src','/img/legalitas/'+src);
-    $('#myModal').modal('show');
-    var list = $('#footerButton').children();
-    if(list.length !== 0){
-      $('#buttonDownload').remove();
+    function ShowPDF(name,src) {
+        $('#pdfTitle').text(name);
+        $('#pdfPlace').attr('src','/img/legalitas/'+src);
+        $('#myModal').modal('show');
+        var list = $('#footerButton').children();
+        if(list.length !== 0){
+        $('#buttonDownload').remove();
+        }
+        $('#footerButton').append('<button type="button" id="buttonDownload" onclick="window.open(`/img/legalitas/'+src+'`)" class="btn btn-primary" id="PDFDownloadButton"><i class="fa fa-download"></i> Download PDF</button>');
     }
-    $('#footerButton').append('<button type="button" id="buttonDownload" onclick="window.open(`/img/legalitas/'+src+'`)" class="btn btn-primary" id="PDFDownloadButton"><i class="fa fa-download"></i> Download PDF</button>');
-}
-function downloadPDF(src){
+    function downloadPDF(src){
 
-}
+    }
 	if(jQuery('#at-legalslider').length > 0){
 		jQuery('#at-legalslider').owlCarousel({
 			items: 2,

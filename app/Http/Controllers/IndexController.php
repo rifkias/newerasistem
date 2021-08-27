@@ -67,7 +67,7 @@ class IndexController extends Controller
         ClientRegisterProduct::create($data);
         $content = view('email.user_register_product')->with($data);
         Mail::send('layouts.email', ['contentMessage' => $content], function($message) {
-            $message->to('sipbos2021.1@gmail.com')->cc('rifkialfarizshidiq.1@gmail.com')->subject('Registered Client From Website');
+            $message->to('sipbos2021.1@gmail.com')->subject('Registered Client From Website');
         });
         $a = $this->TelegramMessage("Ada yang registrasi dari website silakan cek email \n\n *Nama* : $request->nama \n *Email* : $request->email \n *Nomor Telpon* : $request->phone \n *Tipe Produk* : ".str_replace('-',' ',$type));
         Session::flash('success','Terima Kasih telah mengisi form, Silakan tunggu petugas kami menghubungi anda');
@@ -83,7 +83,7 @@ class IndexController extends Controller
         ]);
         $content = view('email.contactus')->with($request->all());
         Mail::send('layouts.email', ['contentMessage' => $content], function($message) {
-            $message->to('sipbos2021@gmail.com')->cc('rifkialfarizshidiq.1@gmail.com')->subject('User Contact From Website');
+            $message->to('sipbos2021@gmail.com')->subject('User Contact From Website');
         });
         $a = $this->TelegramMessage("Ada yang menghubungi dari website silakan cek email \n\n *Nama* : $request->name \n *Email* : $request->emailaddress \n *Nomor Telpon* : $request->phonenumber \n *Pesan* : $request->message");
         Session::flash('success','Terima Kasih telah menghubungi kami');
