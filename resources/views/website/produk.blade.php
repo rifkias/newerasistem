@@ -34,7 +34,7 @@
 					<div class="at-content">
 						<div class="at-services at-servicesvone">
 							<div class="row">
-								<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 pull-left">
+								{{-- <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 pull-left">
                                     <a href="/produk/simpanan-sipbos">
                                         <div class="at-service">
                                             <figure class="at-serviceimg">
@@ -63,100 +63,24 @@
                                             </figure>
                                         </div>
                                     </a>
-								</div>
-								<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 pull-left">
-                                    <a href="/produk/pinjaman">
+								</div> --}}
+                                @foreach ($produk as $item)
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 pull-left">
+                                    <a href="/produk/{{$item->slug}}">
                                         <div class="at-service">
                                             <figure class="at-serviceimg">
                                                 <figcaption>
-                                                    <h2 style="color:white">Pinjaman</h2>
+                                                    <h2 style="color:white">{{$item->nama_produk}}</h2>
                                                     <div class="at-description">
-                                                        <p>Kami menyediakan pinjaman untuk para anggota baik untuk penambahan modal usaha atau untuk modal usaha baru yang bertujuan untuk mensejahterakan anggota.</p>
+                                                        <p>{{$item->deskripsi_singkat	}}</p>
                                                     </div>
                                                 </figcaption>
-                                                <img src="{{asset('/img/produk/produk-pinjam.jpg')}}" alt="image description">
+                                                <img src="{{asset('/img/produk/'.$item->foto_home)}}" alt="image description">
                                             </figure>
                                         </div>
                                     </a>
 								</div>
-								{{-- <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 pull-left">
-									<div class="at-service">
-										<figure class="at-serviceimg">
-											<figcaption>
-												<h2><a href="servicedetail.html">Business Services</a></h2>
-												<div class="at-description">
-													<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-												</div>
-											</figcaption>
-											<img src="{{asset('/template/images/services/img-04.jpg')}}" alt="image description">
-										</figure>
-									</div>
-								</div>
-								<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 pull-left">
-									<div class="at-service">
-										<figure class="at-serviceimg">
-											<figcaption>
-												<h2><a href="servicedetail.html">Investment Planning</a></h2>
-												<div class="at-description">
-													<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-												</div>
-											</figcaption>
-											<img src="{{asset('/template/images/services/img-05.jpg')}}" alt="image description">
-										</figure>
-									</div>
-								</div>
-								<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 pull-left">
-									<div class="at-service">
-										<figure class="at-serviceimg">
-											<figcaption>
-												<h2><a href="servicedetail.html">Quality Resourcing</a></h2>
-												<div class="at-description">
-													<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-												</div>
-											</figcaption>
-											<img src="{{asset('/template/images/services/img-06.jpg')}}" alt="image description">
-										</figure>
-									</div>
-								</div>
-								<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 pull-left">
-									<div class="at-service">
-										<figure class="at-serviceimg">
-											<figcaption>
-												<h2><a href="servicedetail.html">Travel and Aviation</a></h2>
-												<div class="at-description">
-													<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-												</div>
-											</figcaption>
-											<img src="{{asset('/template/images/services/img-07.jpg')}}" alt="image description">
-										</figure>
-									</div>
-								</div>
-								<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 pull-left">
-									<div class="at-service">
-										<figure class="at-serviceimg">
-											<figcaption>
-												<h2><a href="servicedetail.html">Healthcare Services</a></h2>
-												<div class="at-description">
-													<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-												</div>
-											</figcaption>
-											<img src="{{asset('/template/images/services/img-08.jpg')}}" alt="image description">
-										</figure>
-									</div>
-								</div>
-								<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 pull-left">
-									<div class="at-service">
-										<figure class="at-serviceimg">
-											<figcaption>
-												<h2><a href="servicedetail.html">Lawyers Consulting</a></h2>
-												<div class="at-description">
-													<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-												</div>
-											</figcaption>
-											<img src="{{asset('/template/images/services/img-09.jpg')}}" alt="image description">
-										</figure>
-									</div>
-								</div> --}}
+                                @endforeach
 							</div>
 						</div>
 					</div>

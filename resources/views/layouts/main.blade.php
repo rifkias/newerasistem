@@ -77,38 +77,11 @@
 									<li class="menu-item-has-children @if(@$page == 'produk') current-menu-item @endif">
 										<a href="/produk">Produk Kami</a>
 										<ul class="sub-menu">
-                                            <li><a href="/produk/simpanan-sipbos">Simpanan SipBos</a></li>
-                                            <li>
-												<a href="/produk/simpanan-berjangka">Simpanan Berjangka</a>
-												{{-- <ul class="sub-menu">
-													<li><a href="/produk/simpanan-berjangka/okbos">Simpanan Berjangka OKBOS</a></li>
-													<li><a href="/produk/simpanan-berjangka/sipbos">Simpanan Berjangka SIPBOS</a></li>
-													<li><a href="/produk/simpanan-berjangka/hokibos">Simpanan Berjangka HOKIBOS</a></li>
-													<li><a href="/produk/simpanan-berjangka/mantapbos">Simpanan Berjangka MANTAPBOS</a></li>
-												</ul> --}}
-											</li>
-                                            <li>
-												<a href="/produk/pinjaman">Pinjaman</a>
-												{{-- <ul class="sub-menu">
-													<li><a href="/produk/pinjaman/bronze">Pinjaman BRONZE</a></li>
-													<li><a href="/produk/pinjaman/silver">Pinjaman SILVER</a></li>
-													<li><a href="/produk/pinjaman/gold">Pinjaman GOLD</a></li>
-													<li><a href="/produk/pinjaman/">Pinjaman Lainnya</a></li>
-												</ul> --}}
-											</li>
-										</ul>
 
-                                        {{-- <ul class="sub-menu">
-                                            <li class="menu-item-has-children">
-												<a href="javascript:void(0);">Pinjaman</a>
-												<ul class="sub-menu">
-													<li><a href="servicesv1.html">Pinjaman BRONZE</a></li>
-													<li><a href="servicesv1.html">Pinjaman SILVER</a></li>
-													<li><a href="servicesv1.html">Pinjaman GOLD</a></li>
-													<li><a href="servicesv1.html">Pinjaman Lainnya</a></li>
-												</ul>
-											</li>
-										</ul> --}}
+                                            @foreach ($produk as $item)
+                                                <li><a href="/produk/{{$item->slug}}">{{$item->nama_produk}}</a></li>
+                                            @endforeach
+										</ul>
 									</li>
 									<li class="@if(@$page == 'Contact') current-menu-item @endif">
 										<a href="/contact-us">Contact us</a>

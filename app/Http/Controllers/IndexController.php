@@ -7,9 +7,14 @@ use Mail,Session,Config,Exception;
 use Illuminate\Support\Facades\Http;
 use App\Models\Banner;
 use App\Models\ContactUs;
+use App\Models\Produk;
 use App\Models\ClientRegisterProduct;
 class IndexController extends Controller
 {
+   public function __construct()
+   {
+        $this->data['produk'] = Produk::with('SubProduk')->get();
+   }
     public function index()
     {
         $this->data['banner'] = Banner::where('active','true')->get();
@@ -94,17 +99,26 @@ class IndexController extends Controller
     public function produkType($type)
     {
         $this->data['page'] = 'produk';
-        if($type == 'simpanan-sipbos'){
-            return view('website.produk.simpanan-sipbos')->with($this->data);
-        }elseif($type == 'simpanan-berjangka'){
-            return view('website.produk.simpanan-berjangka')->with($this->data);
-        }elseif($type == 'pinjaman'){
-            return view('website.produk.pinjaman')->with($this->data);
-        }elseif($type == 'tabungan'){
-            return view('website.produk.simpanan-sipbos')->with($this->data);
+        $produk = Produk::where('slug',$type)->with('SubProduk')->withCount('SubProduk')->first();
+        if($produk){
+            $this->data['datas'] = $produk;
+            // dd($this->data);
+            return view('website.produk.template')->with($this->data);
         }else{
-            return redirect('/');
+            abort(404);
         }
+        // if($type == 'simpanan-sipbos'){
+        //     return view('website.produk.simpanan-sipbos')->with($this->data);
+        // }elseif($type == 'simpanan-berjangka'){
+        //     return view('website.produk.simpanan-berjangka')->with($this->data);
+        // }elseif($type == 'pinjaman'){
+        //     return view('website.produk.pinjaman')->with($this->data);
+        // }elseif($type == 'tabungan'){
+        //     return view('website.produk.simpanan-sipbos')->with($this->data);
+        // }else{
+        //     return redirect('/');
+        // }
+
     }
     public function produk()
     {
