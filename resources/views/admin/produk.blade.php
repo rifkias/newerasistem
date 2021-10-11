@@ -329,6 +329,24 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <label for="slug" class="col-sm-3 col-form-label">Url</label>
+                    <div class="col-sm-9">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="url">{{}}</span>
+                            <input type="text" aria-describedby="url" required class="form-control @if($errors->has('slug')) is-invalid @elseif(old('slug') !== null) is-valid @endif " id="slug" value="{{old('slug')}}" name="slug">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                        @if ($errors->has('slug'))
+                        <div class="invalid-feedback">
+                            {{$errors->first('slug')}}
+                        </div>
+                        @endif
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label for="syarat_ketentuanEdit" class="col-sm-3 col-form-label">Syarat & Ketentuan <button type="button" style="margin-left:10px;float:right;" onclick="AddSnKEdit()" id="btnSnK" class="btn btn-sm btn-success"><i class="fas fa-plus"></i></button></label>
                     <div class="col-sm-9" id="input_form_edit">
                         {{-- <input required class="form-control @if(@$errors->has(syarat_ketentuan)) is-invalid @elseif(old('syarat_ketentuan') !== null) is-valid @endif" id="syarat_ketentuan" name="syarat_ketentuan"> --}}
@@ -1000,6 +1018,7 @@
                 $('#Label').text('Detail Produk');
                 $('#ProdukNameEdit').val(data.nama_produk).attr('readonly',true);
                 $('#lessDescEdit').val(data.deskripsi_singkat).attr('readonly',true);
+                $('#slug').val(data.slug).attr('readonly',true);
                 $('#produkDescEdit').val(data.deskripsi_detail).attr('readonly',true);
                 var tx1 = document.getElementById('produkDescEdit');
                 var tx2 = document.getElementById('lessDescEdit');
@@ -1071,6 +1090,7 @@
                 $('#Label').text('Update Produk');
                 $('#ProdukNameEdit').val(data.nama_produk).attr('readonly',false);
                 $('#lessDescEdit').val(data.deskripsi_singkat).attr('readonly',false);
+                $('#slug').val(data.slug).attr('readonly',false);
                 $('#produkDescEdit').val(data.deskripsi_detail).attr('readonly',false);
                 var tx1 = document.getElementById('produkDescEdit');
                 var tx2 = document.getElementById('lessDescEdit');

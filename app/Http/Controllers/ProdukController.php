@@ -76,6 +76,7 @@ class ProdukController extends Controller
             'syarat_ketentuan' => 'required',
             'keunggulan' => 'required',
             'home_img' => 'required|max:2048',
+            'slug' => 'required|unique:produk,slug',
         ];
         if($request->foto_list_produk){
             $valid['list_img'] = 'required|max:2048';
@@ -94,6 +95,7 @@ class ProdukController extends Controller
             'syarat_ketentuan' => json_encode($request->syarat_ketentuan),
             'keunggulan_produk' => json_encode($request->keunggulan),
             'foto_home' => $imgHome,
+            'slug' => $request->slug,
         ];
 
         if($request->foto_list_produk){
@@ -152,6 +154,8 @@ class ProdukController extends Controller
             'produkDescEdit' => 'required',
             'syarat_ketentuanEdit' => 'required',
             'keunggulanEdit' => 'required',
+            'slug' => 'required|unique:produk,slug,'.$request->IdProduk,
+
         ];
         if($request->home_img_edit){
             $valid['home_img_edit'] = 'required|max:2048';
@@ -168,7 +172,8 @@ class ProdukController extends Controller
         $data->deskripsi_detail     = $request->produkDescEdit;
         $data->syarat_ketentuan     = json_encode($request->syarat_ketentuanEdit);
         $data->keunggulan_produk    = json_encode($request->keunggulanEdit);
-        if($request->home_img_edit){
+        $data->slug                 = $request->slug;
+            if($request->home_img_edit){
             if($data->foto_home){
                 $this->DeleteFile($data->foto_home);
              }
