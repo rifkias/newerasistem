@@ -191,6 +191,12 @@
                                         <span class="hide-menu"> Produk </span>
                                     </a>
                                 </li>
+                                <li class="sidebar-item">
+                                    <a href="/adminsipbos/website/contactus" class="sidebar-link">
+                                        <i class="mdi mdi-account-alert"></i>
+                                        <span class="hide-menu"> Contact Us </span>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         @if(Auth::user()->role == 'admin')

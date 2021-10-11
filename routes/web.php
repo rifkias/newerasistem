@@ -46,6 +46,9 @@ Route::group(['prefix' => 'adminsipbos'], function () {
         Route::post('website/produk/delete/subproduk','ProdukController@subProdukDelete')->name('subProdukDelete');
         Route::post('website/produk/delete/foto','ProdukController@DeleteImg')->name('ImgDelete');
 
+        Route::get('website/contactus', 'ContactUsController@index')->name('ContactUsAdmin');
+
+
         Route::get('user/profile','UserController@userProfile')->name('userProfile');
         Route::post('user/profile/update','UserController@userProfileUpdate')->name('userProfileUpdate');
 
