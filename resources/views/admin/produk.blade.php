@@ -332,12 +332,8 @@
                     <label for="slug" class="col-sm-3 col-form-label">Url</label>
                     <div class="col-sm-9">
                         <div class="input-group mb-3">
-                            <span class="input-group-text" id="url">{{}}</span>
+                            <span class="input-group-text" id="url">{!!url('/produk')!!}/</span>
                             <input type="text" aria-describedby="url" required class="form-control @if($errors->has('slug')) is-invalid @elseif(old('slug') !== null) is-valid @endif " id="slug" value="{{old('slug')}}" name="slug">
-                        </div>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1">@</span>
-                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                         @if ($errors->has('slug'))
                         <div class="invalid-feedback">
