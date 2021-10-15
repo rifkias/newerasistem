@@ -13,7 +13,7 @@ class IndexController extends Controller
 {
    public function __construct()
    {
-        $this->data['produk'] = Produk::with('SubProduk')->get();
+        $this->data['produk'] = Produk::where('active','true')->with('SubProduk')->get();
    }
     public function index()
     {
@@ -99,7 +99,7 @@ class IndexController extends Controller
     public function produkType($type)
     {
         $this->data['page'] = 'produk';
-        $produk = Produk::where('slug',$type)->with('SubProduk')->withCount('SubProduk')->first();
+        $produk = Produk::where([['slug',$type],['active','true']])->with('SubProduk')->withCount('SubProduk')->first();
         if($produk){
             $this->data['datas'] = $produk;
             // dd($this->data);
