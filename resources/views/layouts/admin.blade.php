@@ -197,16 +197,22 @@
                                         <span class="hide-menu"> Contact Us </span>
                                     </a>
                                 </li>
+                                <li class="sidebar-item">
+                                    <a href="/adminsipbos/website/faq" class="sidebar-link">
+                                        <i class="mdi mdi-comment-question-outline"></i>
+                                        <span class="hide-menu"> FAQ </span>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
-                        @if(Auth::user()->role == 'admin')
+                        {{-- @if(Auth::user()->role == 'admin')
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark" href="/adminsipbos/user" aria-expanded="false">
                                 <i class="mdi mdi-account-multiple"></i>
                                 <span class="hide-menu">User </span>
                             </a>
                         </li>
-                        @endif
+                        @endif --}}
                         <li class="nav-small-cap">
                             <i class="mdi mdi-dots-horizontal"></i>
                             <span class="hide-menu">Other</span>
