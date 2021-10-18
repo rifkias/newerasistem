@@ -48,6 +48,15 @@ Route::group(['prefix' => 'adminsipbos'], function () {
 
         Route::get('website/contactus', 'ContactUsController@index')->name('ContactUsAdmin');
 
+        Route::get('website/faq', 'FaqController@index')->name('FaqAdmin');
+        Route::post('website/faq/add/{type}','FaqController@Add')->name('FaqAdmin.add');
+        Route::post('website/faq/delete','FaqController@FaqDelete')->name('FaqAdmin.delete');
+        Route::get('website/faq/detail/{type}/{id}','FaqController@FaqDetail')->name('FaqAdmin.detail');
+        Route::post('website/faq/edit/{type}','FaqController@FaqEdit')->name('FaqAdmin.edit');
+        Route::post('website/faq/active/{type}','FaqController@FaqActive')->name('FaqAdmin.active');
+
+        Route::post('website/subfaq/delete','FaqController@SubFaqDelete')->name('SubFaqAdmin.delete');
+
 
         Route::get('user/profile','UserController@userProfile')->name('userProfile');
         Route::post('user/profile/update','UserController@userProfileUpdate')->name('userProfileUpdate');
@@ -55,6 +64,7 @@ Route::group(['prefix' => 'adminsipbos'], function () {
         Route::middleware('FilterRole')->group(function(){
             Route::get('user', 'UserController@index')->name('User');
             Route::post('user/add', 'UserController@store')->name('AddUser');
+            Route::post('user/detail', 'UserController@show')->name('DetailUser');
         });
     });
 
