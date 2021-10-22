@@ -25,13 +25,13 @@
                                         <td></td>
                                         <td>{{$item->name}}</td>
                                         <td>{{$item->email}}</td>
-                                        <td>{{$item->status}}</td>
+                                        <td><div class="btn noHover @if($item->status == 'active') btn-success @else btn-danger @endif "><i class="fas fa-lg @if($item->status == 'active') fa-check @else fa-times @endif"></i></div></td>
                                         <td>{{$item->role}}</td>
                                         <td>
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <button class="btn btn-success" onclick="active('{{$item->id}}')"><i class="mdi @if($item->status == 'active') mdi-account-off @else fa-user @endif"></i></button>
-                                                <button class="btn btn-primary" onclick="detail('{{$item->id}}')"><i class="fas fa-info"></i></button>
-                                                <button class="btn btn-warning" onclick="edit('{{$item->id}}')"><i class="fas fa-edit"></i></button>
+                                                <button class="btn btn-success" onclick="Active('{{$item->id}}')"><i class="mdi @if($item->status == 'active') mdi-account-off @else fa-user @endif"></i></button>
+                                                <button class="btn btn-primary" onclick="Detail('{{$item->id}}')"><i class="fas fa-info"></i></button>
+                                                <button class="btn btn-warning" onclick="Edit('{{$item->id}}')"><i class="fas fa-edit"></i></button>
                                                 <button class="btn btn-danger" onclick="Delete('{{$item->id}}')"><i class="fas fa-trash"></i></button>
 
                                             </div>
@@ -49,7 +49,7 @@
     <!-- Modal Tambah -->
     <div class="modal fade" id="MyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
-            <form method="POST" action="/adminsipbos/user/add" enctype="multipart/form-data" id="addForm">
+            <form method="POST" action="" enctype="multipart/form-data" id="addForm">
 
             <div class="modal-content">
             <div class="modal-header">
@@ -58,12 +58,13 @@
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+            <input type="hidden" name="idUser" id="idUser">
             <div class="modal-body">
                 {{ csrf_field() }}
                 <div class="form-group row">
                     <label for="Name" class="col-sm-3 col-form-label">Nama User</label>
                     <div class="col-sm-9">
-                        <input type="text" required class="form-control @if($errors->has('name')) is-invalid @elseif(old('name') !== null) is-valid @endif " id="Name" value="{{old('name')}}" name="name" placeholder="Nama User">
+                        <input type="text" required class="form-control @if($errors->has('name')) is-invalid @elseif(old('name') !== null) is-valid @endif " id="name" value="{{old('name')}}" name="name" placeholder="Nama User">
                         @if ($errors->has('name'))
                         <div class="invalid-feedback">
                             {{$errors->first('name')}}
@@ -82,7 +83,7 @@
                         @endif
                     </div>
                 </div>
-                <div class="form-group row">
+                <div class="form-group row" id="passwordRow">
                     <label for="password" class="col-sm-3 col-form-label">Password</label>
                     <div class="col-sm-9">
                         <input type="password" required class="form-control @if($errors->has('password')) is-invalid @elseif(old('password') !== null) is-valid @endif " id="password" name="password" placeholder="Password">
@@ -93,7 +94,7 @@
                         @endif
                     </div>
                 </div>
-                <div class="form-group row">
+                <div class="form-group row" id="passwordConfirmRow">
                     <label for="password_confirmation " class="col-sm-3 col-form-label">Confirm Password</label>
                     <div class="col-sm-9">
                         <input type="password" required class="form-control @if($errors->has('password_confirmation')) is-invalid @elseif(old('password_confirmation') !== null) is-valid @endif " id="password_confirmation" name="password_confirmation" placeholder="Confirm Password">
@@ -119,10 +120,10 @@
                         @endif
                     </div>
                 </div>
-                <div class="form-group row">
+                <div class="form-group row" id="UserPictRow">
                     <label for="email" class="col-sm-3 col-form-label">Foto Profil</label>
                     <div class="col-sm-9">
-                        <input type="file" name="userPict" accept="image/*" class="form-control @if($errors->has('userPict')) is-invalid @elseif(old('userPict') !== null) is-valid @endif">
+                        <input type="file" name="userPict" id="userPict" accept="image/*" class="form-control @if($errors->has('userPict')) is-invalid @elseif(old('userPict') !== null) is-valid @endif">
                         @if($errors->has('userPict'))
                             <div class="invalid-feedback">
                                 {{$errors->first('userPict')}}
@@ -130,166 +131,9 @@
                         @endif
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Save changes</button>
-            </div>
-            </form>
-        </div>
-    </div>
-    </div>
-    <!-- Modal Detail -->
-    <div class="modal fade" id="MyModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <form method="POST" action="" id="EditForm" enctype="multipart/form-data">
-
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="Label"></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                {{ csrf_field() }}
-                <input type="hidden" name="IdProduk" id="IdItem" value="{{old('IdProduk') ?: '0'}}">
-
-                <div class="form-group row">
-                    <label for="ProdukNameEdit" class="col-sm-3 col-form-label">Nama Produk</label>
-                    <div class="col-sm-9">
-                        <input type="text" required class="form-control @if($errors->has('ProdukNameEdit')) is-invalid @elseif(old('ProdukNameEdit') !== null) is-valid @endif " id="ProdukNameEdit" value="{{old('ProdukNameEdit')}}" name="ProdukNameEdit" placeholder="Tabungan SipBos">
-                        @if ($errors->has('ProdukNameEdit'))
-                        <div class="invalid-feedback">
-                            {{$errors->first('ProdukNameEdit')}}
-                        </div>
-                        @endif
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="lessDescEdit" class="col-sm-3 col-form-label">Deskripsi Singkat</label>
-                    <div class="col-sm-9">
-                        <textarea required class="form-control @if(@$errors->has(lessDescEdit)) is-invalid @elseif(old('lessDescEdit') !== null) is-valid @endif" id="lessDescEdit" name="lessDescEdit"> {{old('lessDescEdit')}} </textarea>
-                        @if($errors->has('lessDescEdit'))
-                            <div class="invalid-feedback">
-                                {{$errors->first('lessDescEdit')}}
-                            </div>
-                        @endif
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="produkDescEdit" class="col-sm-3 col-form-label">Deskripsi Detail</label>
-                    <div class="col-sm-9">
-                        <textarea required class="form-control @if(@$errors->has(produkDescEdit)) is-invalid @elseif(old('produkDescEdit') !== null) is-valid @endif" id="produkDescEdit" name="produkDescEdit"> {{old('produkDescEdit')}} </textarea>
-                        @if($errors->has('produkDescEdit'))
-                            <div class="invalid-feedback">
-                                {{$errors->first('produkDescEdit')}}
-                            </div>
-                        @endif
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="syarat_ketentuanEdit" class="col-sm-3 col-form-label">Syarat & Ketentuan <button type="button" style="margin-left:10px;float:right;" onclick="AddSnKEdit()" id="btnSnK" class="btn btn-sm btn-success"><i class="fas fa-plus"></i></button></label>
-                    <div class="col-sm-9" id="input_form_edit">
-                        {{-- <input required class="form-control @if(@$errors->has(syarat_ketentuan)) is-invalid @elseif(old('syarat_ketentuan') !== null) is-valid @endif" id="syarat_ketentuan" name="syarat_ketentuan"> --}}
-                        @if (old('syarat_ketentuanEdit'))
-                            @foreach (old('syarat_ketentuanEdit') as $index => $item)
-                            <div class="row mb-2" id="SnKEdit{{$index}}">
-                                <div class="col-sm-12">
-                                    <div class="input-group">
-                                        <input required class="form-control @if(@$errors->has(syarat_ketentuanEdit)) is-invalid @elseif(old('syarat_ketentuanEdit') !== null) is-valid @endif" name="syarat_ketentuanEdit[]" id="syarat_ketentuanEdit{{$index}}" value="{{$item}}" >
-                                        <button style="margin-left:10px;" class="btn btn-sm btn-danger" type="button" onclick="RmSnK({{$index}})"><i class="fas fa-minus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            @endforeach
-                        @endif
-
-                        @if($errors->has('syarat_ketentuanEdit'))
-                            <div class="invalid-feedback">
-                                {{$errors->first('syarat_ketentuanEdit')}}
-                            </div>
-                        @endif
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="keunggulanEdit" class="col-sm-3 col-form-label">Keunggulan <button type="button" style="margin-left:10px;float:right;" id="btnKeunggulan" onclick="AddKeunggulanEdit()" class="btn btn-sm btn-success"><i class="fas fa-plus"></i></button></label>
-                    <div class="col-sm-9" id="input_form_edit2">
-                        @if (old('keunggulanEdit'))
-                            @foreach (old('keunggulanEdit') as $index => $item)
-                            <div class="row mb-2" id="KeunggulanEdit{{$index}}">
-                                <div class="col-sm-12">
-                                    <div class="input-group">
-                                        <input required class="form-control @if(@$errors->has(keunggulanEdit)) is-invalid @elseif(old('keunggulanEdit') !== null) is-valid @endif" name="keunggulanEdit[]" value="{{$item}}" id="keunggulanEdit{{$index}}">
-                                        <button style="margin-left:10px;" class="btn btn-sm btn-danger" type="button" onclick="RmKeunggulanEdit({{$index}})"><i class="fas fa-minus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            @endforeach
-                        @endif
-                        @if($errors->has('syarat_ketentuan'))
-                            <div class="invalid-feedback">
-                                {{$errors->first('syarat_ketentuan')}}
-                            </div>
-                        @endif
-                    </div>
-                </div>
-                <div id="imgInput">
-                    <div class="form-group row">
-                   <label for="home_img_edit" class="col-sm-3 col-xs-3 col-form-label">Foto</label>
-                   <div class="col-sm-9">
-                       <input class="form-control @if(@$errors->has(home_img_edit)) is-invalid @elseif(old('home_img_edit') !== null) is-valid @endif" id="home_img_edit" type="file" accept="image/*" name="home_img_edit">
-                       @if($errors->has('home_img_edit'))
-                           <div class="invalid-feedback">
-                               {{$errors->first('home_img_edit')}}
-                           </div>
-                       @endif
-                       <div class="d-flex justify-content-start">
-                           <small id="name1" class="badge badge-default  form-text text-dark">Ukuran yang direkomendasikan (1510x881)</small>
-                       </div>
-                   </div>
-                   </div>
-                   <div class="form-group row">
-                       <label for="foto_list_produk" class="col-sm-3 col-xs-3 col-form-label">Foto List Produk</label>
-                       <div class="col-sm-9">
-                           <input class="form-control @if(@$errors->has(list_img)) is-invalid @elseif(old('list_img') !== null) is-valid @endif" id="list_img" type="file" accept="image/*" name="list_img">
-                           @if($errors->has('list_img'))
-                               <div class="invalid-feedback">
-                                   {{$errors->first('list_img')}}
-                               </div>
-                           @endif
-                           <div class="d-flex justify-content-start">
-                               <small id="name1" class="badge badge-default  form-text text-dark">Ukuran yang direkomendasikan (1510x881)</small>
-                           </div>
-                       </div>
-                   </div>
-                   <div class="form-group row">
-                       <label for="brosur_produk" class="col-sm-3 col-xs-3 col-form-label">Brosur Produk </label>
-                       <div class="col-sm-9">
-                           <input class="form-control @if(@$errors->has(brosur_produk)) is-invalid @elseif(old('brosur_produk') !== null) is-valid @endif" id="brosur_produk" type="file" accept="image/*" name="brosur_produk">
-                           @if($errors->has('brosur_produk'))
-                               <div class="invalid-feedback">
-                                   {{$errors->first('brosur_produk')}}
-                               </div>
-                           @endif
-                           <div class="d-flex justify-content-start">
-                               <small id="name1" class="badge badge-default  form-text text-dark">Tipe File Harus PDF</small>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-                <div id="ListSubProduk">
-                    <div class="form-group row">
-                        <label for="home_img" class="col-sm-3 col-xs-3 col-form-label">List Sub Produk</label>
-                        <div class="col-sm-9">
-                            <div class="accordion" id="AccordionListSub" style="border: 1px solid #ddd;">
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div id="imgModal">
                     <div class="row">
-                        <div class="col-lg-12"><label class="col-form-label">Foto Produk</label></div>
+                        <div class="col-lg-12"><label class="col-form-label">Foto</label></div>
                     </div>
                     <div class="row">
                         <div class="col-lg-6 col-sm-8 col-md-8 col-xs-9">
@@ -304,15 +148,14 @@
                     </div>
                 </div>
             </div>
-            <div class="modal-footer" id="FooterModal">
+            <div class="modal-footer" id="footerModal">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" id="SaveFooter" class="btn btn-primary">Save changes</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
             </div>
             </form>
         </div>
     </div>
     </div>
-    <!-- End Modal -->
 @endsection
 
 @push('css')
@@ -350,7 +193,7 @@
 
     <script>
         var oldadd = "{{old('name')}}";
-        var oldedit = "{{old('nameEdit')}}";
+        var oldedit = "{{old('idUser')}}";
         var Changed = false
         $('#MyModal2').on('hide.bs.modal',function(){
             if($('#Label').text() == 'Update Produk' && Changed == true){
@@ -362,11 +205,13 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-        if(oldadd){
-            $('#MyModal').modal({show:true});
-        }
         if(oldedit){
             EditPostFail(oldedit);
+        }
+        if(oldadd){
+            $('#addForm').attr('action','/adminsipbos/user/add');
+            $('#imgModal').hide();
+            $('#MyModal').modal({show:true});
         }
          $(document).ready( function () {
             // Dropzone.autoDiscover = false;
@@ -399,10 +244,172 @@
                 } );
             } ).draw();
         } );
+        function Active(id) {
+            $.ajax({
+                url : '/adminsipbos/user/active',
+                type : 'POST',
+                data : {'id':id},
+                cache: false,
+                beforeSend:function(){
+                    $('.preloader').show();
+                },
+                success:function(data) {
+                    location.reload();
+                },
+                error:function(){
+                    toastr.error('Ada Kesalahan Sistem, silakan hubungi pengembang sistem');
+                }
+            });
+        }
+        function EditPostFail(id) {
+            $.ajax({
+                url : '/adminsipbos/user/detail',
+                type : 'POST',
+                data : {'id':id},
+                cache: false,
+                beforeSend:function(){
+                    $('.preloader').show();
+                },
+                success:function(data) {
+                    $('#idUser').val(data.id);
+                    $('#email').val(data.email).attr('disabled',true);
+                    $('#addForm').attr('action','/adminsipbos/user/edit');
+                    $('#exampleModalLabel').text('Edit User');
+                    $('#password').attr('required',false);
+                    $('#password_confirmation').attr('required',false);
+                    $('#imgModal').show();
+                    if(data.user_pict !== null){
+                        var div1 = '<div class="row rowBtnImg" id="btnImgHome" style="margin-bottom:5px; padding-right:10px;padding-left:10px;"><button class="btn btn-primary" onClick="showImg(`'+data.user_pict+'`)"" type="button"><i class="fa fa-eye"></i> Foto Home</button></div>';
+                        $('#ListBtnImg').append(div1);
+                    }else{
+                        $('#imgModal').hide();
+                    }
+                    $('.preloader').hide();
+
+                },
+                error:function(){
+                    toastr.error('Ada Kesalahan Sistem, silakan hubungi pengembang sistem');
+                }
+            });
+        }
         function ShowAddModal() {
+            ClearForm();
             $('#MyModal').modal({show:true});
         }
+        function Detail(id) {
+            $.ajax({
+                url : '/adminsipbos/user/detail',
+                type : 'POST',
+                data : {'id':id},
+                cache: false,
+                beforeSend:function(){
+                    $('.preloader').show();
+                },
+                success:function(data) {
+                    ClearForm();
+                    ShowDetail(data,'detail');
+                    $('.preloader').hide();
 
+                },
+                error:function(){
+                    toastr.error('Ada Kesalahan Sistem, silakan hubungi pengembang sistem');
+                }
+            });
+        }
+        function Edit(id) {
+            $.ajax({
+                url : '/adminsipbos/user/detail',
+                type : 'POST',
+                data : {'id':id},
+                cache: false,
+                beforeSend:function(){
+                    $('.preloader').show();
+                },
+                success:function(data) {
+                    ClearForm();
+                    ShowDetail(data,'edit');
+                    $('.preloader').hide();
+
+                },
+                error:function(){
+                    toastr.error('Ada Kesalahan Sistem, silakan hubungi pengembang sistem');
+                }
+            });
+        }
+        function ClearForm() {
+            $('#name').val('').attr('disabled',false);
+            $('#email').val('').attr('disabled',false);
+            $('#password').val('');
+            $('#password_confirmation').val('');
+            $('#RoleOption').val('').change().attr('disabled',false);
+            $('#userPict').val('');
+            $('#ImgPlace').attr('src',"/admin/images/default-img.png");
+            $('#addForm').attr('action','/adminsipbos/user/add');
+            $('#passwordRow').show();
+            $('#passwordConfirmRow').show();
+            $('#UserPictRow').show();
+            $('#imgModal').hide();
+            var list4 = $('#ListBtnImg').children();
+            if(list4.length !== 0){
+                for (let i = 0; i < list4.length; i++) {
+                    $('.rowBtnImg').remove();
+                }
+            }
+            $('#footerModal').show();
+        }
+        function ShowDetail(data,type) {
+            $('#idUser').val(data.id);
+            console.log(data);
+            if(type == 'detail'){
+                $('#exampleModalLabel').text('Detail User')
+                $('#name').val(data.name).attr('disabled',true);
+                $('#email').val(data.email).attr('disabled',true);
+                $('#passwordRow').hide();
+                $('#passwordConfirmRow').hide();
+                $('#passwordConfirmRow').hide();
+                $('#RoleOption').val(data.role).change().attr('disabled',true);
+                $('#UserPictRow').hide();
+                $('#imgModal').show();
+                $('#addForm').attr('action','/adminsipbos/user/edit');
+                if(data.user_pict !== null){
+                    var div1 = '<div class="row rowBtnImg" id="btnImgHome" style="margin-bottom:5px; padding-right:10px;padding-left:10px;"><button class="btn btn-primary" onClick="showImg(`'+data.user_pict+'`)"" type="button"><i class="fa fa-eye"></i> Foto Home</button></div>';
+                    $('#ListBtnImg').append(div1);
+                }else{
+                    $('#imgModal').hide();
+                }
+                $('#footerModal').hide();
+            }else{
+                $('#exampleModalLabel').text('Edit User')
+                $('#name').val(data.name).attr('disabled',false);
+                $('#email').val(data.email).attr('disabled',true);
+                $('#RoleOption').val(data.role).change().attr('disabled',false);
+                $('#password').attr('required',false);
+                $('#password_confirmation').attr('required',false);
+                $('#addForm').attr('action','/adminsipbos/user/edit');
+                $('#imgModal').show();
+                if(data.user_pict !== null){
+                    var div1 = '<div class="row rowBtnImg" id="btnImgHome" style="margin-bottom:5px; padding-right:10px;padding-left:10px;"><button class="btn btn-primary" onClick="showImg(`'+data.user_pict+'`)"" type="button"><i class="fa fa-eye"></i> Foto Home</button></div>';
+                    $('#ListBtnImg').append(div1);
+                }else{
+                    $('#imgModal').hide();
+                }
+            }
+            $('#MyModal').modal({show:true});
+        }
+        function showImg(imgName){
+            $('#imgLoading').show();
+            $('#ImgPlace').hide();
+            // main image loaded ?
+            $('#ImgPlace').on('load', function(){
+                setTimeout(function(){
+                    $('#imgLoading').hide();
+                    $('#ImgPlace').show();
+                },300);
+            }).attr('src',"/img/user/"+imgName);
+        }
+        function ImgErrorLoad(){
+            $('#ImgPlace').attr('src',"/admin/images/not-found-img.png");
+        }
      </script>
      {{-- <script src="{{asset('/admin/js/pages/datatable/datatable-basic.init.js')}}"></script> --}}
 @endpush

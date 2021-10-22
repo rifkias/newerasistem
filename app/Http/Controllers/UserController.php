@@ -72,7 +72,6 @@ class UserController extends Controller
             $masuk['user_pict'] = $filename;
         }
         User::create($masuk);
-        dd($request->all(),$masuk);
         return redirect()->back();
     }
     public function userProfile()
@@ -123,9 +122,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        //
+        $data = User::where('id',$request->id)->first();
+        return response()->json($data);
     }
 
     /**
@@ -134,9 +134,33 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        //
+        $valid = [
+            'idUser' => 'required',
+            'name' => 'required|max:225',
+            'role' => 'required',
+        ];
+        if($request->password){
+            $valid['password'] = 'required|confirmed';
+        }
+        if($request->userPict){
+            $valid['userPict'] = 'required|max:2048';
+        }
+        $this->validate($request,$valid);
+        $masuk = [
+            'name' => $request->name,
+            'role' => $request->role,
+        ];
+        if($request->password){
+            $masuk['password'] = Hash::make($request->password);
+        }
+        if($request->userPict){
+            $masuk['user_pict'] = $this->uploadFile($request->userPict);
+        }
+        User::where('id',$request->idUser)->update($masuk);
+        Session::flash('success','Data Berhasil Diubah');
+        return redirect()->back();
     }
 
     /**
@@ -160,5 +184,18 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function Active(Request $request)
+    {
+        $data = User::where('id',$request->id)->first();
+        if($data->status == 'active'){
+            $data->status = 'deactive';
+            $message = "Tidak Aktif";
+        }else{
+           $data->status = 'active';
+           $message = "Telah Aktif";
+       }
+       $data->save();
+       return Session::flash('success','User '.$message);
     }
 }

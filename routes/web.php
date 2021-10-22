@@ -65,6 +65,8 @@ Route::group(['prefix' => 'adminsipbos'], function () {
             Route::get('user', 'UserController@index')->name('User');
             Route::post('user/add', 'UserController@store')->name('AddUser');
             Route::post('user/detail', 'UserController@show')->name('DetailUser');
+            Route::post('user/active', 'UserController@Active')->name('ActiveDeactiveUser');
+            Route::post('user/edit', 'UserController@edit')->name('EditUser');
         });
     });
 
