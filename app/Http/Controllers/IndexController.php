@@ -132,8 +132,6 @@ class IndexController extends Controller
     }
     public function test()
     {
-        // dd($this->TelegramMessage("Ada yang menghubungi dari website silakan cek email \n test"));
-        dd(Config('app.telegram_chatid'));
-        return view('email.user_register_product');
+      return view('layouts.new');
     }
 }

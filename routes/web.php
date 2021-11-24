@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/','IndexController@index')->name('MainPage');
 Route::get('/about-us','IndexController@about')->name('AboutUs');
 Route::get('/produk/{type}','IndexController@produkType')->name('ProdukType');
@@ -24,7 +23,7 @@ Route::get('/faq','IndexController@Faq')->name('Faq');
 Route::get('/test','IndexController@test')->name('test');
 
 
-Route::group(['prefix' => 'adminsipbos'], function () {
+Route::group(['prefix' => 'nesadminsite'], function () {
     Auth::routes();
     Route::middleware('auth')->group(function(){
         Route::get('website/','HomeController@autoRedirect')->name('AutoRedirect');
