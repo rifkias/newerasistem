@@ -11,10 +11,10 @@ use App\Models\Produk;
 use App\Models\ClientRegisterProduct;
 class IndexController extends Controller
 {
-   public function __construct()
-   {
-        $this->data['produk'] = Produk::where('active','true')->with('SubProduk')->get();
-   }
+//    public function __construct()
+//    {
+//         $this->data['produk'] = Produk::where('active','true')->with('SubProduk')->get();
+//    }
     public function index()
     {
         $this->data['banner'] = Banner::where('active','true')->get();
