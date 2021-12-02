@@ -15,10 +15,10 @@ Version: 1.0
  *      2.2 - Text Color
  *      2.3 - Anchor
  *      2.4 - Heading and Paragraph
- * 
+ *
  * 3. - COMPONENTS
- *      3.1 - Preloader  
- *      3.2 - Buttons  
+ *      3.1 - Preloader
+ *      3.2 - Buttons
  *      3.3 - Box Icon 1
  *      3.4 - Box Icon 2
  *      3.5 - Box Image 1
@@ -35,8 +35,8 @@ Version: 1.0
  *      3.16 - Career Tabs
  *      3.17 - Box News
  * 4. - LOGO & NAVIGATION
- *      4.1 - Topbar 
- *      4.2 - Navbar 
+ *      4.1 - Topbar
+ *      4.2 - Navbar
  * 5. - HOME
  *      5.1 - Banner
  *      5.2 - Text Typing
@@ -55,7 +55,7 @@ Version: 1.0
  *      6.12 Section - Clients
  *      6.13 Section - Video BG
  *      6.14 Section - Contact and Map
- * 7. - FOOTER 
+ * 7. - FOOTER
  * 8. - RESPONSIVE
  * -----------------------------------------------------------------------------
  */
@@ -97,16 +97,16 @@ Version: 1.0
   content: '\e801'; }
 
 /* '' */
-/* -------------------- 
+/* --------------------
 TOPBAR SETTING
 -----------------------*/
-/* -------------------- 
+/* --------------------
 NAVBAR SETTING
 -----------------------*/
-/* -------------------- 
+/* --------------------
 FOOTER SETTING
 -----------------------*/
-/* -------------------- 
+/* --------------------
 BUTTON SETTING
 -----------------------*/
 .bolder {
@@ -3426,7 +3426,7 @@ Back To Top Section
         &.active{
           .nav-link {
             color: $color-primary;
-          } 
+          }
         }
       }*/ }
       .header-1 .navbar-main.stiky .navbar {

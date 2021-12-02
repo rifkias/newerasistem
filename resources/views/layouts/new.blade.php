@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>COXE - Corporate Multipurpose HTML Template</title>
+    <title>New Era Sistem</title>
     <meta name="description" content="COXE is a clean, modern, and fully responsive Html Template. it is designed for corporate, finacial, insurance, agency, businesses or any type of person or business who wants to showcase their work, services and professional way.">
     <meta name="keywords" content="business, clean, company, corporate, gallery, huge, lightbox, modern, multipurpose, html template, portfolio, rometheme, startup">
     <meta name="author" content="rometheme.net">
@@ -14,16 +14,17 @@
 	<!-- ==============================================
 	Favicons
 	=============================================== -->
-	<link rel="shortcut icon" href="images/favicon.ico">
-	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	<link rel="shortcut icon" href="{{asset('/template2/favicon/favicon-32x32.png')}}">
+	<link rel="apple-touch-icon" href="{{asset('/template2/favicon/apple-icon.png')}}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{{asset('/template2/favicon/apple-icon-72x72.png')}}">
+	<link rel="apple-touch-icon" sizes="114x114" href="{{asset('/template2/images/apple-icon-114x114.png')}}">
 
 	<!-- ==============================================
 	CSS VENDOR
 	=============================================== -->
 	<link rel="stylesheet" type="text/css" href="{{asset('template2/css/vendor/bootstrap.min.css')}}" />
-	<link rel="stylesheet" type="text/css" href="{{asset('template2/css/vendor/font-awesome.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('/plugin/fontawesome-5/css/fontawesome-all.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('/plugin/printify-icon/style.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('template2/css/vendor/owl.carousel.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('template2/css/vendor/owl.theme.default.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('template2/css/vendor/magnific-popup.css')}}">
@@ -56,15 +57,15 @@
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-sm-4 col-md-2 col-lg-4">
-						<p class="mb-0"><em>Awesome Template for Business Multipurpose</em></p>
+						<p class="mb-0"><em>Solusi Bagi Perkembangan Bisnis Anda</em></p>
 					</div>
 					<div class="col-sm-8 col-md-10 col-lg-8">
 						<div class="info pull-right">
 							<div class="info-item">
-								<i class="fa fa-envelope-o"></i> Mail :  support@coxe.com
+								<i class="fa fa-envelope-o"></i> Mail :  support@newerasistem.com
 							</div>
 							<div class="info-item">
-								<i class="fa fa-phone"></i> Call Us : +62 7100 1234
+								<i class="fa fa-phone"></i> Call Us : +62 812-9529-2571
 							</div>
 						</div>
 					</div>
@@ -84,52 +85,29 @@
 			        </button>
 			        <div class="collapse navbar-collapse" id="navbarNavDropdown">
 			            <ul class="navbar-nav ml-auto">
+			                <li class="nav-item">
+			                    <a class="nav-link" href="/">HOME</a>
+			                </li>
+                            <li class="nav-item">
+			                    <a class="nav-link" href="/tentang-kami">TENTANG KAMI</a>
+			                </li>
 			                <li class="nav-item dropdown">
 			                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						          HOME
+						          JASA KAMI
 						        </a>
 			                    <div class="dropdown-menu">
-			                    	<a class="dropdown-item" href="index.html">HOME VERSION 1</a>
-	          						<a class="dropdown-item" href="index-2.html">HOME VERSION 2</a>
-	          						<a class="dropdown-item" href="index-3.html">HOME ONEPAGE</a>
+			                    	<a class="dropdown-item" target="_blank" href="http://percetakan.newerasistem.com/">New Era Printing</a>
+	          						<a class="dropdown-item" target="_blank" href="http://konsultan.newerasistem.com">New Era Konsultan</a>
 							    </div>
 			                </li>
 			                <li class="nav-item dropdown">
 			                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						          ABOUT
+						          LAINNYA
 						        </a>
 			                    <div class="dropdown-menu">
-			                    	<a class="dropdown-item" href="about.html">ABOUT VERSION 1</a>
-	          						<a class="dropdown-item" href="about-2.html">ABOUT VERSION 2</a>
-							    </div>
-			                </li>
-			                <li class="nav-item dropdown">
-			                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						          SERVICES
-						        </a>
-			                    <div class="dropdown-menu">
-			                    	<a class="dropdown-item" href="services.html">SERVICES VERSION 1</a>
-	          						<a class="dropdown-item" href="services-2.html">SERVICES VERSION 2</a>
-							    </div>
-			                </li>
-			                <li class="nav-item dropdown">
-			                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						          PORTFOLIO
-						        </a>
-			                    <div class="dropdown-menu">
-			                    	<a class="dropdown-item" href="portfolio.html">PORTFOLIO VERSION 1</a>
-	          						<a class="dropdown-item" href="portfolio-2.html">PORTFOLIO VERSION 2</a>
-	          						<a class="dropdown-item" href="portfolio-single.html">SINGLE PORTFOLIO</a>
-							    </div>
-			                </li>
-			                <li class="nav-item dropdown">
-			                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						          BLOG
-						        </a>
-			                    <div class="dropdown-menu">
-			                    	<a class="dropdown-item" href="blog.html">BLOG VERSION 1</a>
-	          						<a class="dropdown-item" href="blog-2.html">BLOG VERSION 2</a>
-	          						<a class="dropdown-item" href="blog-single.html">SINGLE BLOG</a>
+			                    	<a class="dropdown-item" href="portfolio.html">Portofolio</a>
+	          						<a class="dropdown-item" href="portfolio-2.html">Blog</a>
+	          						<a class="dropdown-item" href="portfolio-single.html">News</a>
 							    </div>
 			                </li>
 			                <li class="nav-item">
@@ -146,27 +124,39 @@
 	<!-- BANNER -->
     <div class="banner">
     	<div class="owl-carousel owl-theme full-screen">
+            <!-- Item 2 -->
+	    	<div class="item">
+	            <img src="{{asset('/template2/images/banner/img2-min.jpg')}}" style="max-height:900px;width:auto;" alt="Slider">
+	            <div class="container d-flex align-items-center h-center">
+	            	<div class="wrap-caption">
+		                <h1 class="caption-heading">New Era Sistem</h1>
+		                <p class="uk24">Solusi bagi perkembangan bisnis anda</p>
+		                <a href="#" class="btn btn-primary">Tentang Kami</a> &nbsp;
+		                <a href="#" class="btn btn-primary">Hubungi Kami</a>
+		            </div>
+	            </div>
+	        </div>
     		<!-- Item 1 -->
 	    	<div class="item">
-	        	<img src="{{asset('/template2/images/dummy-img-1920x900.jpg')}}" alt="Slider">
+	        	<img src="{{asset('/template2/images/banner/img1-min.jpg')}}" style="max-height:900px;width:auto;" alt="Slider">
 	        	<div class="container d-flex align-items-center h-center">
 	            	<div class="wrap-caption">
-		                <h1 class="caption-heading">THINK BUSINESS THINK COXE</h1>
-		                <p class="uk24">Be Creative. Innovative. & Inspirative</p>
-		                <a href="#" class="btn btn-primary">DISCOVER MORE</a> &nbsp;
-		                <a href="#" class="btn btn-primary">PURCHASE NOW</a>
+		                <h1 class="caption-heading">New Era Konsultan</h1>
+		                <p class="uk24">Solusi untuk pembuatan & pengurusan legalitas perusahaan anda</p>
+		                <a href="#" class="btn btn-primary">Kunjungi Kami</a> &nbsp;
+		                <a href="#" class="btn btn-primary">Hubungi Kami</a>
 		            </div>
 	            </div>
 	    	</div>
-	    	<!-- Item 2 -->
+            <!-- Item 2 -->
 	    	<div class="item">
-	            <img src="{{asset('/template2/images/dummy-img-1920x900-2.jpg')}}" alt="Slider">
+	            <img src="{{asset('/template2/images/banner/img3.jpg')}}" style="max-height:900px;width:auto;" alt="Slider">
 	            <div class="container d-flex align-items-center h-center">
 	            	<div class="wrap-caption">
-		                <h1 class="caption-heading">THINK BUSINESS THINK COXE</h1>
-		                <p class="uk24">Be Creative. Innovative. & Inspirative</p>
-		                <a href="#" class="btn btn-primary">DISCOVER MORE</a> &nbsp;
-		                <a href="#" class="btn btn-primary">PURCHASE NOW</a>
+		                <h1 class="caption-heading">New Era Printing</h1>
+		                <p class="uk24">Solusi untuk mempercepat pertumbuhan bisnis anda</p>
+		                <a href="#" class="btn btn-primary">Kunjungi Kami</a> &nbsp;
+		                <a href="#" class="btn btn-primary">Hubungi Kami</a>
 		            </div>
 	            </div>
 	        </div>
@@ -183,11 +173,11 @@
 					<div class="col-sm-12 col-md-12">
 						<div class="cta-1">
 			              	<div class="body-text text-white mb-3">
-			                	<h3 class="my-1">Grow Up Your Business With Coxe</h3>
-			                	<p class="uk18 mb-0">We provide high standar clean website for your business solutions</p>
+			                	<h3 class="my-1">Kepuasan anda menjadi prioritas utama kami</h3>
+			                	<p class="uk18 mb-0">Kembangkan Bisnis Anda bersama New Era Sistem</p>
 			              	</div>
 			              	<div class="body-action mt-3">
-			                	<a href="#" class="btn btn-secondary">PURCHASE NOW</a>
+			                	<a href="#" class="btn btn-secondary">Hubungi Kami</a>
 			              	</div>
 			            </div>
 					</div>
@@ -206,9 +196,9 @@
 
 					<div class="col-sm-12 col-md-12">
 						<h2 class="section-heading text-center">
-							Hello! Welcome to Coxe Business
+							Selamat Datang Di New Era Sistem
 						</h2>
-						<p class="subheading text-center mb-5">Awesome features we offer exclusive only</p>
+						<p class="subheading text-center mb-5">Kami bergerak dibeberapa bidang untuk menunjang bisnis anda</p>
 					</div>
 
 				</div>
@@ -218,11 +208,11 @@
 					<div class="col-sm-12 col-md-12 col-lg-4 mb-2">
 						<div class="box-icon-1 text-center">
 							<div class="icon">
-								<i class="fa fa-paint-brush"></i>
+								<i class="printify-icon-printing-document"></i>
 							</div>
 							<div class="body-content">
-								<h4>Awesome Design</h4>
-								<p>Dolor sit amet dolor gravida placerat liberolorem ipsum dolor consectetur adipiscing elit, sed do eiusmod.</p>
+								<h4>Percetakan</h4>
+								<p>Cetak Semua kebutuhan bisnis anda baik untuk internal maupun pemasaran kami akan memberikan harga spesial khusus untuk anda.</p>
 							</div>
 						</div>
 					</div>
@@ -230,11 +220,11 @@
 					<div class="col-sm-12 col-md-12 col-lg-4 mb-2">
 						<div class="box-icon-1 text-center">
 							<div class="icon">
-								<i class="fa fa-gears"></i>
+								<i class="fa fa-building"></i>
 							</div>
 							<div class="body-content">
-								<h4>Easy Customize</h4>
-								<p>Dolor sit amet dolor gravida placerat liberolorem ipsum dolor consectetur adipiscing elit, sed do eiusmod.</p>
+								<h4>Konsultan</h4>
+								<p>Wujudkan mimpi anda mempunyai perusahaan sendiri bersama kami, kami menyediakan jasa pembuatan perusahaan beserta dengan legalitasnya.</p>
 							</div>
 						</div>
 					</div>
@@ -242,11 +232,11 @@
 					<div class="col-sm-12 col-md-12 col-lg-4 mb-2">
 						<div class="box-icon-1 text-center">
 							<div class="icon">
-								<i class="fa fa-rocket"></i>
+								<i class="fa fa-store"></i>
 							</div>
 							<div class="body-content">
-								<h4>Fast Publish</h4>
-								<p>Dolor sit amet dolor gravida placerat liberolorem ipsum dolor consectetur adipiscing elit, sed do eiusmod.</p>
+								<h4>Mitra UMKM</h4>
+								<p>Kembangkan bisnis yang anda punya dengan kami, kami siap membantu anda dengan syarat pendaftaran yang mudah dan cepat.</p>
 							</div>
 						</div>
 					</div>
@@ -258,7 +248,7 @@
 	</div>
 
 	<!-- CTA -->
-	<div class="section bgi-cover-center cta" data-background="{{asset('/template2/images/dummy-img-1920x900.jpg')}}">
+	{{-- <div class="section bgi-cover-center cta" data-background="{{asset('/template2/images/dummy-img-1920x900.jpg')}}">
 		<div class="content-wrap">
 			<div class="container">
 				<div class="row align-items-center">
@@ -272,7 +262,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> --}}
 
 	<!-- WHO WE ARE -->
 	<div class="section bg-gray-light">
@@ -283,28 +273,28 @@
 				<div class="row">
 					<div class="col-sm-12 col-md-12 col-lg-6">
 						<h2 class="section-heading text-left">
-							WHO WE ARE?
+							Siapa Kami ?
 						</h2>
 
-						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+						<p><b>PT New Era Sistem</b> adalah perusahaan yang dibangun pada tahun 2021 dengan tujuan mengembangkan bisnis masyarakat indonesia baik UMKM maupun perusahaan Besar.</p>
+						<p>Kami bertujuan menciptakan relasi jangka panjang agar bisa berkembang bersama anda dengan mengedepankan kualitas yang kami berikan dan kepuasan yang anda dapat.</p>
 						<a href="#" class="btn btn-primary">READ MORE</a>
 						<div class="spacer-30"></div>
 					</div>
 					<div class="col-sm-12 col-md-12 col-lg-6">
 
-							<div id="whoweare" class="whoweare owl-carousel owl-theme" data-background="images/laptop.png">
+							<div id="whoweare" class="whoweare owl-carousel owl-theme" data-background="{{asset('/template2/images/laptop.png')}}">
 					    		<!-- Item 1 -->
 						    	<div class="item">
-									<img src="{{asset('/template2/images/dummy-img-600x400.jpg')}}" alt="">
+									<img src="{{asset('/template2/images/etc/img1.jpg')}}" alt="">
 						    	</div>
 						    	<!-- Item 2 -->
 						    	<div class="item">
-									<img src="{{asset('/template2/images/dummy-img-600x400.jpg')}}" alt="">
+									<img src="{{asset('/template2/images/etc/img4.jpg')}}" alt="">
 						    	</div>
 						    	<!-- Item 3 -->
 						    	<div class="item">
-									<img src="{{asset('/template2/images/dummy-img-600x400.jpg')}}" alt="">
+									<img src="{{asset('/template2/images/etc/img3.jpg')}}" alt="">
 						    	</div>
 						    </div>
 
