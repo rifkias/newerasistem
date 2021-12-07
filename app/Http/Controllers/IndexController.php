@@ -17,14 +17,14 @@ class IndexController extends Controller
 //    }
     public function index()
     {
-        $this->data['banner'] = Banner::where('active','true')->get();
+        // $this->data['banner'] = Banner::where('active','true')->get();
         $this->data['page'] = 'home';
-        return view('website.index')->with($this->data);
+        return view('main-file.index')->with($this->data);
     }
     public function about()
     {
         $this->data['page'] = 'about';
-        return view('website.about')->with($this->data);
+        return view('main-file.about')->with($this->data);
     }
     public function produkDetail($type,$detail)
     {

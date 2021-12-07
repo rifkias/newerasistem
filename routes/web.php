@@ -12,8 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/','IndexController@test')->name('MainPage');
+Route::get('/','IndexController@index')->name('MainPage');
 Route::get('/about-us','IndexController@about')->name('AboutUs');
+Route::get('/tentang-kami','IndexController@about')->name('TentangKami');
 Route::get('/produk/{type}','IndexController@produkType')->name('ProdukType');
 Route::post('/registrasi/{type}','IndexController@ProductRegister')->name('ProdukRegister');
 Route::get('/produk','IndexController@produk')->name('ProdukView');
