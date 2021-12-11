@@ -191,7 +191,7 @@
 				<div class="row mb-5">
 					<div class="col-sm-12 col-md-12">
 						<h2 class="section-heading text-center no-after mb-3">
-							LATEST WORKS
+							Project Terakhir Kami
 						</h2>
 					</div>
 				</div>
@@ -201,8 +201,8 @@
 					<div class="col-sm-12 col-md-6 col-lg-4 mb-4">
 						<div class="rs-box-project">
 							<div class="media-box">
-								<a href="{{asset('/template2/images/dummy-img-600x500.jpg')}}" title="Gallery #1">
-									<img src="{{asset('/template2/images/dummy-img-600x500.jpg')}}" alt="" class="img-fluid">
+								<a href="{{asset('/img/portofolio/1.jpeg')}}" title="Gallery #1">
+									<img src="{{asset('/img/portofolio/1.jpeg')}}" style="height: 290px;width:600px;object-fit:cover;" alt="" class="img-fluid">
 									<div class="project-info">
 										<div class="project-icon">
 											<span class="fa fa-search"></span>
@@ -211,8 +211,8 @@
 								</a>
 							</div>
 							<div class="body">
-								<div class="title">Notebook Mockup</div>
-								<div class="category">Design</div>
+								<div class="title">Amplop</div>
+								<div class="category">New Era Printing</div>
 
 							</div>
 						</div>
@@ -231,13 +231,13 @@
 								</a>
 							</div>
 							<div class="body">
-								<div class="title">Paper Hot Cup</div>
-								<div class="category">Design</div>
+								<div class="title">PT  xxxx xxxx</div>
+								<div class="category">New Era Konsultant</div>
 
 							</div>
 						</div>
 					</div>
-					<!-- Item 3 -->
+					{{-- <!-- Item 3 -->
 					<div class="col-sm-12 col-md-6 col-lg-4 mb-4">
 						<div class="rs-box-project">
 							<div class="media-box">
@@ -316,7 +316,7 @@
 
 							</div>
 						</div>
-					</div>
+					</div> --}}
 				</div>
 
 				<div class="text-center mt-5">

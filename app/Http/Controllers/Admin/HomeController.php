@@ -19,7 +19,7 @@ class HomeController extends Controller
     }
     public function autoRedirect()
     {
-        Return redirect('adminsipbos/');
+        Return redirect('nesadminsite/');
     }
     /**
      * Show the application dashboard.

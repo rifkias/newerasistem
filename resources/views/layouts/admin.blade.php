@@ -9,8 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('/template/img/Logo.png')}}">
-    <title>SipBos - Admin</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('/template2/favicon/apple-icon-60x60.png')}}">
+    <title>NES - Admin  </title>
     <!-- Custom CSS -->
     <link href="{{asset('/admin/css/style.min.css')}}" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
@@ -56,9 +56,9 @@
                             <b class="logo-icon">
                                 <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                                 <!-- Dark Logo icon -->
-                                <img src="{{asset('/template/img/Logo.png')}}" alt="homepage" class="dark-logo" />
+                                <img src="{{asset('/template2/images/logo2.png')}}" alt="homepage" class="dark-logo" />
                                 <!-- Light Logo icon -->
-                                <img src="{{asset('/template/img/Logo.png')}}" alt="homepage" class="light-logo" />
+                                <img src="{{asset('/template2/images/logo2.png')}}" alt="homepage" class="light-logo" />
                             </b>
                             <!--End Logo icon -->
                             <!-- Logo text -->
@@ -125,7 +125,7 @@
                                     </div>
                                 </div>
                                 <div class="profile-dis scrollable">
-                                    <a class="dropdown-item" href="/adminsipbos/user/profile">
+                                    <a class="dropdown-item" href="/nesadminsite/user/profile">
                                         <i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
                                     {{-- <a class="dropdown-item" href="javascript:void(0)">
                                         <i class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>
@@ -165,10 +165,10 @@
                     <ul id="sidebarnav">
                         <li class="nav-small-cap">
                             <i class="mdi mdi-dots-horizontal"></i>
-                            <span class="hide-menu">Personal</span>
+                            <span class="hide-menu">Main Menu</span>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark" href="/adminsipbos" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark" href="/nesadminsite" aria-expanded="false">
                                 <i class="mdi mdi-av-timer"></i>
                                 <span class="hide-menu">Home </span>
                             </a>
@@ -180,25 +180,25 @@
                             </a>
                             <ul aria-expanded="false" class="collapse">
                                 <li class="sidebar-item">
-                                    <a href="/adminsipbos/website/banner" class="sidebar-link">
+                                    <a href="/nesadminsite/website/banner" class="sidebar-link">
                                         <i class="mdi mdi-view-quilt"></i>
                                         <span class="hide-menu"> Banner </span>
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="/adminsipbos/website/produk" class="sidebar-link">
+                                    <a href="/nesadminsite/website/produk" class="sidebar-link">
                                         <i class="mdi mdi-view-parallel"></i>
                                         <span class="hide-menu"> Produk </span>
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="/adminsipbos/website/contactus" class="sidebar-link">
+                                    <a href="/nesadminsite/website/contactus" class="sidebar-link">
                                         <i class="mdi mdi-account-alert"></i>
                                         <span class="hide-menu"> Contact Us </span>
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="/adminsipbos/website/faq" class="sidebar-link">
+                                    <a href="/nesadminsite/website/faq" class="sidebar-link">
                                         <i class="mdi mdi-comment-question-outline"></i>
                                         <span class="hide-menu"> FAQ </span>
                                     </a>
@@ -207,7 +207,7 @@
                         </li>
                         @if(Auth::user()->role == 'admin')
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark" href="/adminsipbos/user" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark" href="/nesadminsite/user" aria-expanded="false">
                                 <i class="mdi mdi-account-multiple"></i>
                                 <span class="hide-menu">User </span>
                             </a>
