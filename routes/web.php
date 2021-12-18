@@ -26,15 +26,25 @@ Route::get('/test','IndexController@test')->name('test');
 
 Route::group(['prefix' => 'nesadminsite'], function () {
     Auth::routes();
-    Route::middleware('auth')->group(function(){
+    Route::middleware('auth')->namespace('Admin')->group(function(){
         Route::get('website/','HomeController@autoRedirect')->name('AutoRedirect');
         Route::get('/', 'HomeController@index')->name('home');
-        Route::get('website/banner', 'BannerController@index')->name('banner');
-        Route::get('website/banner/detail/{id}', 'BannerController@show')->name('bannerDetail');
-        Route::post('website/banner/edit', 'BannerController@edit')->name('bannerEdit');
-        Route::post('website/banner/add', 'BannerController@store')->name('bannerAdd');
-        Route::post('website/banner/delete', 'BannerController@destroy')->name('bannerDelete');
-        Route::post('website/banner/active', 'BannerController@active')->name('bannerActive');
+
+        Route::group(['prefix' => 'banner'], function(){
+            Route::get('/{data}','BannerController@index')->name('Home.Banner');
+            Route::post('/{data}/detail','BannerController@show')->name('detail.Banner');
+            Route::post('/{data}/update','BannerController@edit')->name('edit.Banner');
+            Route::post('/{data}/add','BannerController@store')->name('add.Banner');
+            Route::post('/{data}/delete','BannerController@destroy')->name('delete.Banner');
+            Route::post('/{data}/active','BannerController@active')->name('active.Banner');
+        });
+
+        // Route::get('website/banner', 'BannerController@index')->name('banner');
+        // Route::get('website/banner/detail/{id}', 'BannerController@show')->name('bannerDetail');
+        // Route::post('website/banner/edit', 'BannerController@edit')->name('bannerEdit');
+        // Route::post('website/banner/add', 'BannerController@store')->name('bannerAdd');
+        // Route::post('website/banner/delete', 'BannerController@destroy')->name('bannerDelete');
+        // Route::post('website/banner/active', 'BannerController@active')->name('bannerActive');
 
         Route::get('website/produk', 'ProdukController@index')->name('Produk');
         Route::get('website/produk/detail/{id}', 'ProdukController@show')->name('ProdukDetail');
@@ -61,6 +71,15 @@ Route::group(['prefix' => 'nesadminsite'], function () {
         Route::get('user/profile','UserController@userProfile')->name('userProfile');
         Route::post('user/profile/update','UserController@userProfileUpdate')->name('userProfileUpdate');
 
+        Route::group(['prefix' => 'configsub'], function(){
+            Route::get('/','WebsiteController@index')->name('ConfigWebsite');
+            Route::post('/detail','WebsiteController@show')->name('Detail.ConfigWebsite');
+            Route::post('/update','WebsiteController@edit')->name('Update.ConfigWebsite');
+            Route::post('/add','WebsiteController@store')->name('Add.ConfigWebsite');
+            Route::post('/delete','WebsiteController@destroy')->name('delete.ConfigWebsite');
+        });
+        Route::get('/configsub','WebsiteController@index')->name('ConfigWebsite');
+        Route::get('/configsub','WebsiteController@index')->name('ConfigWebsite');
         Route::middleware('FilterRole')->group(function(){
             Route::get('user', 'UserController@index')->name('User');
             Route::post('user/add', 'UserController@store')->name('AddUser');

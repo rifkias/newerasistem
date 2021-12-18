@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
-
+use App\Models\WebsiteConfig;
 class HomeController extends Controller
 {
     /**
@@ -15,6 +16,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
+        $this->data['listWeb'] = WebsiteConfig::all();
         $this->middleware('auth');
     }
     public function autoRedirect()

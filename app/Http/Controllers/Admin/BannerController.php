@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Banner;
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Controller;
+use App\Models\WebsiteConfig;
+use Illuminate\Support\Facades\URL;
 use Session,File;
 class BannerController extends Controller
 {
@@ -15,6 +17,8 @@ class BannerController extends Controller
      */
     public function __construct()
     {
+        $this->data['listWeb'] = WebsiteConfig::all();
+        $this->data['currentWeb'] = request()->route('data');
         $this->middleware('auth');
     }
 
@@ -28,11 +32,15 @@ class BannerController extends Controller
         return $data;
         # code...
     }
-    public function index()
+    public function index($id)
     {
+        $data = Banner::whereHas('Website', function ($query){
+            $query->where('name','=',request()->route('data'));
+        })->get();
+        // dd($this->data);
         $pageDetail = $this->pageDetail('1','Banner','Banner');
         $this->data['pageDetail'] = $pageDetail;
-        $this->data['banner'] = Banner::all();
+        $this->data['banner'] = $data;
         // dd(Banner::all());
         return view('admin.banner')->with($this->data);
     }

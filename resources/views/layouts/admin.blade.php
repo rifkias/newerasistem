@@ -173,7 +173,45 @@
                                 <span class="hide-menu">Home </span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
+                        <li class="nav-small-cap">
+                            <i class="mdi mdi-dots-horizontal"></i>
+                            <span class="hide-menu">Website Setting</span>
+                        </li>
+                        @foreach ($listWeb as $item)
+                            <li class="sidebar-item selected">
+                                <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                                    <i class="mdi mdi-tune"></i>
+                                    <span class="hide-menu">{{$item->title}}</span>
+                                </a>
+                                <ul aria-expanded="false" class="collapse">
+                                    <li class="sidebar-item active">
+                                        <a href="/nesadminsite/banner/{{$item->name}}" class="sidebar-link">
+                                            <i class="mdi mdi-view-quilt"></i>
+                                            <span class="hide-menu"> Banner </span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="/nesadminsite/{{$item->name}}/produk" class="sidebar-link">
+                                            <i class="mdi mdi-view-parallel"></i>
+                                            <span class="hide-menu"> Produk </span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="/nesadminsite/{{$item->name}}/contactus" class="sidebar-link">
+                                            <i class="mdi mdi-account-alert"></i>
+                                            <span class="hide-menu"> Contact Us </span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="/nesadminsite/{{$item->name}}/faq" class="sidebar-link">
+                                            <i class="mdi mdi-comment-question-outline"></i>
+                                            <span class="hide-menu"> FAQ </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        @endforeach
+                        {{-- <li class="sidebar-item">
                             <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                                 <i class="mdi mdi-tune"></i>
                                 <span class="hide-menu">Website </span>
@@ -204,7 +242,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                         @if(Auth::user()->role == 'admin')
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark" href="/nesadminsite/user" aria-expanded="false">
@@ -213,6 +251,16 @@
                             </a>
                         </li>
                         @endif
+                        <li class="nav-small-cap">
+                            <i class="mdi mdi-dots-horizontal"></i>
+                            <span class="hide-menu">Sub Website Config</span>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark" href="/nesadminsite/configsub" aria-expanded="false">
+                                <i class="mdi mdi-settings"></i>
+                                <span class="hide-menu">Sub Website Setting</span>
+                            </a>
+                        </li>
                         <li class="nav-small-cap">
                             <i class="mdi mdi-dots-horizontal"></i>
                             <span class="hide-menu">Other</span>
@@ -243,7 +291,7 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-5 align-self-center">
-                        <h4 class="page-title">Dashboard SipBos</h4>
+                        <h4 class="page-title">Dashboard New Era Sistem</h4>
                     </div>
                     <div class="col-7 align-self-center">
                         <div class="d-flex align-items-center justify-content-end">
@@ -277,7 +325,7 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center">
-                Koperasi Berkat Artha Sentosa All Rights Reserved.
+                New Era Sistem All Rights Reserved.
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->

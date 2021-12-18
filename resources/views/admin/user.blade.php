@@ -410,6 +410,6 @@
         function ImgErrorLoad(){
             $('#ImgPlace').attr('src',"/admin/images/not-found-img.png");
         }
-     </script>
+    </script>
      {{-- <script src="{{asset('/admin/js/pages/datatable/datatable-basic.init.js')}}"></script> --}}
 @endpush

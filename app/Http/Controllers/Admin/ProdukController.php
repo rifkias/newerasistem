@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Produk;
 use App\Models\SubProduk;
+use App\Models\WebsiteConfig;
 use Illuminate\Http\Request;
 use Session,Auth,File;
 
@@ -18,7 +20,13 @@ class ProdukController extends Controller
     // {
     //     $this->middleware('auth');
     // }
-
+    public function __construct()
+    {
+        $this->data['listWeb'] = WebsiteConfig::all();
+        if(!Auth::user()){
+            return redirect('/nesadminsite/login');
+        }
+    }
     public function index()
     {
         $this->data['produk'] = Produk::withCount('SubProduk')->get();

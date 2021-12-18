@@ -5,10 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Auth,Hash,Session;
+use App\Models\WebsiteConfig;
 use GuzzleHttp\Psr7\UploadedFile;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->data['listWeb'] = WebsiteConfig::all();
+        if(!Auth::user()){
+            return redirect('/nesadminsite/login');
+        }
+    }
     /**
      * Display a listing of the resource.
      *
