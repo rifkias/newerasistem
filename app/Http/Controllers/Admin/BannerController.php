@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\WebsiteConfig;
 use Illuminate\Support\Facades\URL;
+use PDO;
 use Session,File;
 class BannerController extends Controller
 {
@@ -36,7 +37,7 @@ class BannerController extends Controller
     {
         $data = Banner::whereHas('Website', function ($query){
             $query->where('name','=',request()->route('data'));
-        })->get();
+        })->orderBy('seq','asc')->get();
         // dd($this->data);
         $pageDetail = $this->pageDetail('1','Banner','Banner');
         $this->data['pageDetail'] = $pageDetail;
@@ -63,34 +64,34 @@ class BannerController extends Controller
      */
     public function store(Request $request)
     {
-
-        if(!$request->readmore){
-            $this->validate($request, [
-                'bannerName'      => 'required|max:255',
-                'bannerImg'   => 'required|max:2048',
-                'descBanner'     => 'required|max:255'
-            ]);
-        }else{
-            $this->validate($request, [
-                'bannerName'      => 'required|max:255',
-                'bannerImg'   => 'required|max:2048',
-                'descBanner'     => 'required|max:255',
-                'readmoreLink'     => 'required|max:255'
-            ]);
+        $valid = [
+            'name'      => 'required|max:255',
+            'updoadImg'   => 'required|max:2048',
+            'descBanner'     => 'required|max:255'
+        ];
+        if($request->has('readmore')){
+            $valid['readmoreLink'] = 'require  d|max:255';
         }
-        $filename = time().'.'.$request->bannerImg->getClientOriginalExtension();
-        $request->bannerImg->move(public_path('img/banner'), $filename);
-
+        $this->validate($request,$valid);
+        $filename = time().'.'.$request->updoadImg->getClientOriginalExtension();
+        $request->updoadImg->move(public_path('img/banner'), $filename);
+        $lastSeq =  $data = Banner::whereHas('Website', function ($query){
+            $query->where('name','=',request()->route('data'));
+        })->pluck('seq')->last();
+        $WebsiteId = WebsiteConfig::where('name',request()->route('data'))->pluck('id')->last();
         $masuk = [
-            'banner_name' => $request->bannerName,
+            'banner_name' => $request->name,
             'banner_desc' => $request->descBanner,
             'banner_img' => $filename,
             'active' => 'true',
+            'website_id' => $WebsiteId,
+            'read_more_link' => $request->readmoreLink,
+            'seq' => $lastSeq+1,
         ];
-        if($request->readmore){
+        if($request->has('readmore')){
             $masuk['read_more_link'] = $request->readmoreLink;
         }
-        if($request->contactUs){
+        if($request->has('contactUs')){
             $masuk['contact_us'] = 'true';
         }
         Banner::create($masuk);
@@ -105,9 +106,11 @@ class BannerController extends Controller
      * @param  \App\Banner  $banner
      * @return \Illuminate\Http\Response
      */
-    public function show(Banner $banner,$id)
+    public function show(Banner $banner,Request $request)
     {
-        return Banner::findOrFail($id);
+        // dd($banner);
+        $data = Banner::findOrFail($request->id);
+        return response()->json($data);
     }
 
     /**
@@ -133,40 +136,42 @@ class BannerController extends Controller
 
     public function edit(Banner $banner,Request $request)
     {
-
-        // dd($request->all(),$banner::all());
         $valid = [
-            'NameEdit'      => 'required|max:255',
-            'descEdit'     => 'required|max:255'
+            'mainId'    => 'required',
+            'name'      => 'required|max:255',
+            'descBanner'     => 'required|max:255'
         ];
 
-        $masuk = [
-            'banner_name' => $request->NameEdit,
-            'banner_desc' => $request->descEdit,
-        ];
-
-        if($request->readmoreLinkEdit !== null){
-            $valid['readmoreLinkE'] = 'required|max:255';
-            $masuk['read_more_link'] = $request->readmoreLinkE;
+        if($request->readmore){
+            $valid['readmoreLink'] = 'required|max:255';
         }
-
-        if($request->ImgEdit !== null){
-            $valid['ImgEdit'] = 'required|max:2048';
+        if($request->updoadImg !== null){
+            $valid['updoadImg'] = 'required|max:2048';
          }
+
          $this->validate($request, $valid);
 
-         if($request->contactUsE){
+         $masuk = [
+            'banner_name' => $request->name,
+            'banner_desc' => $request->descBanner,
+        ];
+
+         if($request->contactUs){
             $masuk['contact_us'] = 'true';
         }else{
             $masuk['contact_us'] = null;
         }
-        if($request->ImgEdit !== null){
-            $filename = time().'.'.$request->ImgEdit->getClientOriginalExtension();
-            $request->ImgEdit->move(public_path('img/banner'), $filename);
-            $masuk['banner_img'] = $filename;
+        if($request->readmore){
+            $masuk['read_more_link'] = $request->readmoreLink;
+        }else{
+            $masuk['read_more_link'] = null;
+        }
+        if($request->updoadImg !== null){
+            $masuk['banner_img'] = $this->uploadFile($request->updoadImg);
+            $OldImg = Banner::where('id',$request->mainId)->pluck('banner_img')->first();
+            $this->DeleteFile($OldImg);
          }
-
-         Banner::where('id',$request->IdBanner)->update($masuk);
+         Banner::where('id',$request->mainId)->update($masuk);
          Session::flash('success','Data Banner Berhasil Diubah');
          return redirect()->back();
 
@@ -183,7 +188,20 @@ class BannerController extends Controller
     {
         //
     }
-
+    function DeleteFile($fileName)
+    {
+        $url = public_path("img/banner/$fileName");
+        if(File::exists($url)){
+            File::delete($url);
+        }
+    }
+    private function uploadFile($file)
+    {
+        sleep(1);
+        $filename = time().'.'.$file->getClientOriginalExtension();
+        $file->move(public_path('img/banner'), $filename);
+        return $filename;
+    }
     /**
      * Remove the specified resource from storage.
      *

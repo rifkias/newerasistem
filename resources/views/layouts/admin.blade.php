@@ -56,7 +56,7 @@
                             <b class="logo-icon">
                                 <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                                 <!-- Dark Logo icon -->
-                                <img src="{{asset('/template2/images/logo2.png')}}" alt="homepage" class="dark-logo" />
+                                <img src="{{asset('/template2/images/logo2.png')}}" alt="homepage" class="dark-logo" style="width: 100%!important;" />
                                 <!-- Light Logo icon -->
                                 <img src="{{asset('/template2/images/logo2.png')}}" alt="homepage" class="light-logo" />
                             </b>
@@ -191,7 +191,7 @@
                                         </a>
                                     </li>
                                     <li class="sidebar-item">
-                                        <a href="/nesadminsite/{{$item->name}}/produk" class="sidebar-link">
+                                        <a href="/nesadminsite/produk/{{$item->name}}" class="sidebar-link">
                                             <i class="mdi mdi-view-parallel"></i>
                                             <span class="hide-menu"> Produk </span>
                                         </a>

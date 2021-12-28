@@ -1,44 +1,26 @@
 @extends('layouts.new')
 @section('content')
 	<!-- BANNER -->
+    <?php //var_dump($banner);?>
     <div class="banner">
     	<div class="owl-carousel owl-theme full-screen">
-            <!-- Item 2 -->
-	    	<div class="item">
-	            <img src="{{asset('/template2/images/banner/img2-min.jpg')}}" style="max-height:900px;width:auto;" alt="Slider">
-	            <div class="container d-flex align-items-center h-center">
-	            	<div class="wrap-caption">
-		                <h1 class="caption-heading">New Era Sistem</h1>
-		                <p class="uk24">Solusi bagi perkembangan bisnis anda</p>
-		                <a href="#" class="btn btn-primary">Tentang Kami</a> &nbsp;
-		                <a href="#" class="btn btn-primary">Hubungi Kami</a>
-		            </div>
-	            </div>
-	        </div>
-    		<!-- Item 1 -->
-	    	<div class="item">
-	        	<img src="{{asset('/template2/images/banner/img1-min.jpg')}}" style="max-height:900px;width:auto;" alt="Slider">
+            @foreach ($banner as $item)
+            <div class="item">
+	        	<img src="{{asset('img/banner/'.@$item['banner_img'])}}" style="max-height:900px;width:auto;" alt="Slider">
 	        	<div class="container d-flex align-items-center h-center">
 	            	<div class="wrap-caption">
-		                <h1 class="caption-heading">New Era Konsultan</h1>
-		                <p class="uk24">Solusi untuk pembuatan & pengurusan legalitas perusahaan anda</p>
-		                <a href="#" class="btn btn-primary">Kunjungi Kami</a> &nbsp;
-		                <a href="#" class="btn btn-primary">Hubungi Kami</a>
+		                <h1 class="caption-heading">{{@$item['banner_name']}}</h1>
+		                <p class="uk24">{{@$item['banner_desc']}}</p>
+                        @if(@$item['read_more_link'])
+                            <a href="{!!@$item['read_more_link']!!}" class="btn btn-primary">Kunjungi Kami</a> &nbsp;
+                        @endif
+                        @if(@$item['contact_us'])
+                            <a href="#" class="btn btn-primary">Hubungi Kami</a>
+                        @endif
 		            </div>
 	            </div>
 	    	</div>
-            <!-- Item 2 -->
-	    	<div class="item">
-	            <img src="{{asset('/template2/images/banner/img3.jpg')}}" style="max-height:900px;width:auto;" alt="Slider">
-	            <div class="container d-flex align-items-center h-center">
-	            	<div class="wrap-caption">
-		                <h1 class="caption-heading">New Era Printing</h1>
-		                <p class="uk24">Solusi untuk mempercepat pertumbuhan bisnis anda</p>
-		                <a href="#" class="btn btn-primary">Kunjungi Kami</a> &nbsp;
-		                <a href="#" class="btn btn-primary">Hubungi Kami</a>
-		            </div>
-	            </div>
-	        </div>
+            @endforeach
     	</div>
 	    <div class="custom-nav owl-nav"></div>
     </div>

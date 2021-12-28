@@ -34,7 +34,8 @@
                                             {{-- <button class="btn btn-success" onclick="Active('{{$item->id}}')"><i class="mdi @if($item->status == 'active') mdi-account-off @else fa-user @endif"></i></button> --}}
                                             <button class="btn btn-primary" onclick="Detail('{{$item->id}}')"><i class="fas fa-info"></i></button>
                                             <button class="btn btn-warning" onclick="Edit('{{$item->id}}')"><i class="fas fa-edit"></i></button>
-                                            <button class="btn btn-danger" onclick="Delete('{{$item->id}}')"><i class="fas fa-trash"></i></button>
+                                            <button class="btn btn-danger" oncWlick="Delete('{{$item->id}}')"><i class="fas fa-trash"></i></button>
+                                            <button class="btn btn-primary" onclick="RefreshToken('{{$item->id}}')"><i class="fas fa-sync-alt   "></i></button>
 
                                         </div>
                                     </td>
@@ -66,7 +67,7 @@
             <div class="form-group row">
                 <label for="Name" class="col-sm-3 col-form-label">Nama Website</label>
                 <div class="col-sm-9">
-                    <input type="text" required class="form-control @if($errors->has('name')) is-invalid @elseif(old('name') !== null) is-valid @endif " id="name" value="{{old('name')}}" name="name" placeholder="Nama User">
+                    <input type="text" required class="form-control @if($errors->has('name')) is-invalid @elseif(old('name') !== null) is-valid @endif " id="name" value="{{old('name')}}" name="name" placeholder="Nama Website">
                     @if ($errors->has('name'))
                     <div class="invalid-feedback">
                         {{$errors->first('name')}}
@@ -250,7 +251,7 @@
             this.style.height = (this.scrollHeight) + "px";
         });
         $('#MyModal2').on('hide.bs.modal',function(){
-            if($('#Label').text() == 'Update Produk' && Changed == true){
+            if($('#Label').text() == 'Update Website Setting' && Changed == true){
                 location.reload();
             }
         });
@@ -368,6 +369,36 @@
                     });
                 }
             });
+        }
+        function RefreshToken(params){
+            swal({
+                title: "Kamu yakin ?",
+                text: "Token Harus Di Set Ulang setelah Refresh!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Iya, Lanjut !",
+                cancelButtonText: "Tidak, Kembali !",
+            }).then((Deleted) => {
+                if(Deleted.value == true){
+                    $.ajax({
+                        url : '/nesadminsite/configsub/refreshtoken',
+                        type : 'POST',
+                        data : {'id':params},
+                        cache: false,
+                        beforeSend:function(){
+                            $('.preloader').show();
+                        },
+                        success:function(data) {
+                            location.reload();
+                        },
+                        error:function(){
+                            toastr.error('Ada Kesalahan Sistem, silakan hubungi pengembang sistem');
+                        }
+                    });
+                }
+            });
+            console.log(params);
         }
         function EditPostFail(id) {
             $.ajax({

@@ -65,7 +65,13 @@
                     <div class="text-center">
                         <img src="{{asset('/template2/images/etc/img6.jpg')}}" alt="" class="img-fluid shadow-lg mb-3">
                         <h4 class="text-primary">Misi Kami</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim sint, doloribus ea officia dolorum laboriosam natus expedita laudantium. Dignissimos obcaecati possimus recusandae voluptate debitis nostrum repudiandae deleniti fuga expedita est..</p>
+                        <ol>
+                            <li>Mampu memenuhi kebutuhan yang diperlukan klien</li>
+                            <li>Mampu menciptakan pelayanan yang lebih cepat, handal dan terpercaya</li>
+                            <li>Membangun Mitra Usaha Mikro, Kecil dan Menengah (UMKM) di Indonesia</li>
+                            <li>Mengembangkan strategi pemasaran berbasis aplikasi dan digital</li>
+                            <li>Menciptakan produk dan aplikasi Inovatif</li>
+                        </ol>
                     </div>
                 </div>
 
@@ -74,7 +80,7 @@
                     <div class="text-center">
                         <img src="{{asset('/template2/images/etc/img7.jpg')}}" alt="" class="img-fluid shadow-lg mb-3">
                         <h4 class="text-primary">Visi Kami</h4>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis rem ut cumque numquam repudiandae harum laboriosam adipisci rerum quam nihil, aliquid sequi quis repellat consectetur quos illo quibusdam. Cumque, culpa..</p>
+                        <p>Memberikan solusi terbaik dalam pemilihan pelayanan jasa  konsultasi dan mitra bisnis dengan mengedepankan kualitas  serta produk yang terpercaya</p>
                     </div>
                 </div>
             </div>

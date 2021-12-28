@@ -3,8 +3,11 @@ $.ajaxSetup({
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
 });
+var CurrentWeb = window.location.pathname.split("/").pop();
 
 $(document).ready( function () {
+    // var url = "/nesadminsite/banner/"+CurrentWeb+"/detail/'+id";
+    // console.log(url);
     var table = $('#MyTable').DataTable({
     responsive: true,
     "dom": 'l<"toolbar">frtip',
@@ -66,19 +69,39 @@ function readMoreShow2() {
 
 }
 function ShowBanner(id) {
-    // $.get('/adminsipbos/website/banner/detail/'+id)
+    // $.get('/adminsipbos/banner/detail/'+id)
     $.ajax({
-        url : '/adminsipbos/website/banner/detail/'+id,
-        type : 'GET',
+        url : '/nesadminsite/banner/'+CurrentWeb+'/detail',
+        type : 'POST',
+        data : {'id':id},
         cache: false,
+        beforeSend:function(){
+            $('.preloader').show();
+        },
         success:function(data) {
-            DetailBanner(data,'detail');
+            ClearForm();
+            console.log(data);
+            ShowDetail(data,'detail');
+            $('.preloader').hide();
+
+        },
+        error:function(){
+            toastr.error('Ada Kesalahan Sistem, silakan hubungi pengembang sistem');
         }
     });
+    // $.ajax({
+    //     url : '/nesadminsite/banner/detail',
+    //     data : {'id':id},
+    //     type : 'POST',
+    //     cache: false,
+    //     success:function(data) {
+    //         DetailBanner(data,'detail');
+    //     }
+    // });
 }
 function ShowBannerEdit(id) {
     $.ajax({
-        url : '/adminsipbos/website/banner/detail/'+id,
+        url : '/nesadminsite/banner/detail/'+id,
         type : 'GET',
         cache: false,
         success:function(data) {
@@ -88,6 +111,7 @@ function ShowBannerEdit(id) {
 }
 
 function DetailBanner(data,type) {
+    console.log(data);
     if(type == 'detail'){
         $('#ModalTitle').text('Detail Banner');
         $('#NameEdit').val(data.banner_name).attr('readonly',true);
@@ -129,14 +153,15 @@ function DetailBanner(data,type) {
         }else{
             $('#contactUsE').attr({checked:true,disabled:false});
         }
-        $('#imgE').attr('src',"/img/banner/"+data.banner_img);
-        $('#FormAction').attr('action','/adminsipbos/website/banner/edit');
+        $('#FormAction').attr('action','/nesadminsite/banner/edit');
     }
+    showImg(data.icon);
+
     $('#MyModal2').modal('show')
 }
 function ActiveBanner(id) {
     $.ajax({
-            url : '/adminsipbos/website/banner/active',
+            url : '/nesadminsite/banner/active',
             type : 'POST',
             data : {'id':id},
             cache: false,
@@ -157,7 +182,7 @@ function BannerDelete(params) {
     }).then((Deleted) => {
         if(Deleted.value == true){
             $.ajax({
-                url : '/adminsipbos/website/banner/delete',
+                url : '/nesadminsite/banner/delete',
                 type : 'POST',
                 data : {'id':params},
                 cache: false,
@@ -167,4 +192,18 @@ function BannerDelete(params) {
             });
         }
     });
+}
+function showImg(imgName){
+    $('#imgLoading').show();
+    $('#ImgPlace').hide();
+    // main image loaded ?
+    $('#ImgPlace').on('load', function(){
+        setTimeout(function(){
+            $('#imgLoading').hide();
+            $('#ImgPlace').show();
+        },300);
+    }).attr('src',"/img/icon/"+imgName);
+}
+function ImgErrorLoad(){
+    $('#ImgPlace').attr('src',"/admin/images/not-found-img.png");
 }

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Mail,Session,Config,Exception;
 use Illuminate\Support\Facades\Http;
-use App\Models\Banner;
+use App\Models\BannerAPI;
 use App\Models\ContactUs;
 use App\Models\Produk;
 use App\Models\ClientRegisterProduct;
@@ -18,6 +18,12 @@ class IndexController extends Controller
     public function index()
     {
         // $this->data['banner'] = Banner::where('active','true')->get();
+        $model = new BannerAPI();
+        $banner = $model->getAllData();
+        // dd($banner);
+        $this->data['banner'] = $banner['datas']['results'];
+        // dd($model->getAllData());
+        // dd($this->data);
         $this->data['page'] = 'home';
         return view('main-file.index')->with($this->data);
     }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\WebsiteConfig;
+use Illuminate\Support\Str;
 use Session,File,Auth;
 class WebsiteController extends Controller
 {
@@ -131,5 +132,13 @@ class WebsiteController extends Controller
         $filename = time().'.'.$file->getClientOriginalExtension();
         $file->move(public_path('img/icon'), $filename);
         return $filename;
+    }
+    public function refreshToken(Request $request)
+    {
+        $data = WebsiteConfig::findOrFail($request->id);
+        $token = Str::random(60);
+        $data->uniqueid = hash('sha256', $token);
+        $data->save();
+        return Session::flash('success','Refresh Token Berhasil Diupdate');
     }
 }
